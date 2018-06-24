@@ -1,0 +1,36 @@
+.App {
+  /* text-align: center; */
+  overflow-x: hidden;
+  font-family: Oswald, sans-serif;
+  font-weight: 200;
+}
+
+:root {
+  --green-color: #BFBA3D;
+  --beige-color: #F9F2D9;
+  --blue-color: #8AB2C2;
+  --orange-color: #DC5620;
+}
+
+
+
+.header-main {
+  background-color: var(--blue-color);
+
+}
+
+.footer-main {
+  background-color: var(--orange-color);
+}
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
