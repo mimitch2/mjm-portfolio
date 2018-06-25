@@ -25,17 +25,18 @@
   font-weight: 700;
   font-size: 2.5em;
   margin-top: -5px;
+  letter-spacing: -1px;
 }
 
 .web-design-text {
   color: var(--headertext-color);
-  font-size: .87em;
-  margin-top: -12px;
-  margin-left: 2px;
+  font-size: .79em;
+  margin-top: -13px;
+  margin-left: 1px;
 }
 
 .logo-div {
-  margin: 4px 0px 4px 10px;
+  margin: 4px 0px 6px 10px;
   display: flex;
   flex-direction: column;
   /* background-color: var(--orange-color); */
@@ -44,9 +45,24 @@
   /* border: 3px solid var(--headertext-color); */
 }
 
+.diamond-main {
+  width: max-content;
+}
+
 .nav-main {
-  display: flex;
-  flex-direction: row;
+  margin-bottom: -34px;
+  width: max-content;
+  overflow-y: hidden;
+}
+
+.nav-list {
+ list-style-type: none;
+ display: flex; 
+ flex-direction: row;
+}
+
+.star {
+  /* color: var(--orange-color); */
 }
 
 .nav-item {
@@ -57,14 +73,17 @@
 
 .links-main {
   margin-right: 6px;
-  width: max-content
+  width: max-content;
+  width: 65px;
+  display: flex;
+  justify-content: center;
 }
 
 .links-icon {
  color: var(--headertext-color);
- font-size: 26px;
+ font-size: 22px;
  cursor: pointer;
- padding: 0px 8px 0px 8px
+ padding: 3px 0px 3px 0px
 }
 
 .content {
