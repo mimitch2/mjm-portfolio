@@ -9,16 +9,26 @@ import Blog from './components/Blog'
 
 
 class App extends Component {
+
+  state = {
+    hide: "hide"
+  }
+
+  // click = () => {
+  
+  //   console.log(document.getElementsByClassName("comp"));
+  //   document.getElementsByClassName("comp")[0].id="hide"
+  // }
+
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App" /* onClick={this.click} */ >
           <header>
             <Header />
           </header>
-       
-          <div className="content">
-         
+          <div className="content" >    
+        
             <Switch>
               <Route path="/code" component={Code} />
               <Route path="/design" component={Design} />

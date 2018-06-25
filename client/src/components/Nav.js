@@ -11,12 +11,13 @@ class Nav extends Component{
   }
 
 componentDidMount = () => {
+  const path = window.location.pathname
+  this.props.set(path)
   this.setClasses();
-  document.getElementById(window.location.pathname).className = this.state.selected
+  document.getElementById(path).className = this.state.selected
 }
 
  componentDidUpdate = (prevProps) => {
-   console.log(this.props.url);
    if (prevProps.url !== this.props.url && this.props.url === "/"){
      this.setClasses();
      document.getElementById("/").className = this.state.selected

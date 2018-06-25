@@ -1,23 +1,37 @@
 .App {
-  /* text-align: center; */
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
-  font-weight: 500;
 }
 
 :root {
   --green-color: #BFBA3D;
-  --header-color: #e8e6de;
+  --header-color: #e8e6decc;
   --blue-color: #8AB2C2;
   --headertext-color: #1C3F94;
   --orange-color: #DC5620;
 }
 
 .header-main {
+  
+  position: fixed;
+  width: 100vw;
   background-color: var(--header-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+/************* logo ***************************/
+
+.logo-div {
+  margin: 4px 0px 6px 10px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: var(--orange-color); */
+  /* border-radius: 8px; */
+  padding: 0px 3px 0px 3px;
+  /* border: 3px solid var(--headertext-color); */
 }
 
 .logo-text {
@@ -38,16 +52,8 @@
 .logo-link {
  text-decoration: none;
 }
-.logo-div {
 
-  margin: 4px 0px 6px 10px;
-  display: flex;
-  flex-direction: column;
-  /* background-color: var(--orange-color); */
-  /* border-radius: 8px; */
-  padding: 0px 3px 0px 3px;
-  /* border: 3px solid var(--headertext-color); */
-}
+/************ nav *******************/
 
 .nav-main {
   margin-bottom: -34px;
@@ -100,9 +106,7 @@
   transform: scaleX(1);
 }
 
-.links-icon:hover {
-  color: var(--orange-color)
-}
+/***************** links **********************/
 
 .links-main {
   margin-right: 6px;
@@ -120,13 +124,34 @@
  padding: 3px 0px 3px 0px
 }
 
+.links-icon:hover {
+  color: var(--orange-color)
+}
+
+/************** content **************/
+
 .content {
+  margin-top: 64px;
   display: flex;
   justify-content: center;
 }
 
+
+.comp {
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+#hide {
+  opacity: 0; 
+}
+
 .footer-main {
   background-color: var(--header-color);
+}
+
+#austin-image {
+  width: 100%
 }
 
 @keyframes App-logo-spin {

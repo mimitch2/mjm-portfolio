@@ -1,8 +1,9 @@
 import React from 'react'
+import '../css/App.css'
 
 const Design = () => {
   return (
-    <div>DESIGN</div>
+    <div className="design-main comp">DESIGN</div>
   )
 }
 

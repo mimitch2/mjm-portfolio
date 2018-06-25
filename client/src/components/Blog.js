@@ -1,8 +1,9 @@
 import React from 'react'
+import '../css/App.css'
 
 const Blog = (props) => {
   return (
-    <div>BLOG</div>
+    <div className="blog-main comp">BLOG</div>
   )
 }
 
