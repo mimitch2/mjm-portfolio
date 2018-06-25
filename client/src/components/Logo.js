@@ -4,10 +4,14 @@ import {Link} from "react-router-dom";
 
 
 
-const Logo = () => {
 
+const Logo = (props) => {
+
+  const handleClick = () =>{
+    props.set("/")
+  }
   return (
-    <Link to="/" className="logo-link">
+    <Link to="/" className="logo-link" onClick={()=>handleClick()}>
       <div className="logo-div">
         <span className="logo-text">MJM</span>
         <span className="web-design-text">DEV / DESIGN</span>

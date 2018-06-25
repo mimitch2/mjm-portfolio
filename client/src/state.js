@@ -1,6 +1,5 @@
 
 export default {
-  foo: ["HELLO"]
-    
-  };
+  url: ""
+};
   

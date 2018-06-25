@@ -10,10 +10,28 @@ class Nav extends Component{
     unselected: "nav-item"
   }
 
+componentDidMount = () => {
+  this.setClasses();
+  document.getElementById(window.location.pathname).className = this.state.selected
+}
+
+ componentDidUpdate = (prevProps) => {
+   console.log(this.props.url);
+   if (prevProps.url !== this.props.url && this.props.url === "/"){
+     this.setClasses();
+     document.getElementById("/").className = this.state.selected
+   }
+ }
+
  handleClick = (e) => {
+   this.props.set(e.target.id)
+   this.setClasses();
+   e.target.className = this.state.selected
+ }
+
+ setClasses = () => {
    const linkElements = root.querySelectorAll('nav a')
    linkElements.forEach(a => a.className = this.state.unselected)
-   e.target.className = this.state.selected
  }
 
 
@@ -24,16 +42,16 @@ class Nav extends Component{
        <nav>
          <ul className="nav-list">
        
-           <Link to="/" className={this.state.selected} onClick={(e) => this.handleClick(e)}>
+           <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
-           <Link to="/code" className={this.state.unselected} onClick={(e) => this.handleClick(e)}>
+           <Link to="/code" className={this.state.unselected} id="/code" onClick={(e) => this.handleClick(e)}>
            CODE  
            </Link>
-           <Link to="/design" className={this.state.unselected} onClick={(e) => this.handleClick(e)}>
+           <Link to="/design" className={this.state.unselected} id="/design" onClick={(e) => this.handleClick(e)}>
            DESIGN  
            </Link>
-           <Link to="/blog" className={this.state.unselected} onClick={(e) => this.handleClick(e)}>
+           <Link to="/blog" className={this.state.unselected} id="/blog" onClick={(e) => this.handleClick(e)}>
            BLOG  
            </Link>
          

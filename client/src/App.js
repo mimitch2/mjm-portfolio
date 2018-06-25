@@ -4,6 +4,8 @@ import Header from './components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from './components/About'
 import Code from './components/Code'
+import Design from './components/Design'
+import Blog from './components/Blog'
 
 
 class App extends Component {
@@ -19,6 +21,8 @@ class App extends Component {
          
             <Switch>
               <Route path="/code" component={Code} />
+              <Route path="/design" component={Design} />
+              <Route path="/blog" component={Blog} />
               <Route path="/" component={About} />
             </Switch>
          
