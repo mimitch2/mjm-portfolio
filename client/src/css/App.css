@@ -12,7 +12,7 @@
 }
 
 .header-main {
-  
+  z-index: 4;
   position: fixed;
   width: 100vw;
   background-color: var(--header-color);
@@ -150,8 +150,13 @@
   background-color: var(--header-color);
 }
 
+.about-image.dv {
+  z-index: 0;
+}
+
 #austin-image {
-  width: 100%
+  width: 100%;
+ 
 }
 
 @keyframes App-logo-spin {

@@ -14,16 +14,10 @@ class App extends Component {
     hide: "hide"
   }
 
-  // click = () => {
-  
-  //   console.log(document.getElementsByClassName("comp"));
-  //   document.getElementsByClassName("comp")[0].id="hide"
-  // }
-
   render() {
     return (
       <BrowserRouter>
-        <div className="App" /* onClick={this.click} */ >
+        <div className="App" >
           <header>
             <Header />
           </header>

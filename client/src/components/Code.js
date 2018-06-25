@@ -1,9 +1,14 @@
 import React from 'react'
 import '../css/App.css'
+import Fade from 'react-reveal/Fade';
 
 const Code = (props) => {
   return (
-    <div className="code-main comp">CODE</div>
+    <Fade left>
+      <div className="code-main comp">
+        <img src="img/JS_graphoc.png" alt="" />
+      </div>
+    </Fade>
   )
 }
 
