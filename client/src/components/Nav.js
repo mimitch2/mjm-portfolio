@@ -25,6 +25,10 @@ componentDidMount = () => {
  }
 
  handleClick = (e) => {
+   //  const lastSlash = e.target.href.lastIndexOf("/")
+   //  const path = e.target.href.substring(lastSlash)
+   //  console.log(path);
+   
    this.props.set(e.target.id)
    this.setClasses();
    e.target.className = this.state.selected
@@ -37,12 +41,10 @@ componentDidMount = () => {
 
 
  render(){
-   return (
-    
+   return ( 
      <div className="nav-main">
        <nav>
          <ul className="nav-list">
-       
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
@@ -55,12 +57,9 @@ componentDidMount = () => {
            <Link to="/blog" className={this.state.unselected} id="/blog" onClick={(e) => this.handleClick(e)}>
            BLOG  
            </Link>
-         
-      
          </ul>
        </nav>
      </div>
-
    )
  }
 }

@@ -10,19 +10,9 @@ import Blog from './components/Blog'
 
 
 const history = createHistory()
-const location = history.location
+// const location = history.location
  
 class App extends Component {
-
-  state = {
-    hide: "hide"
-  }
- 
-  click = () => {
-    console.log(document.getElementsByClassName("comp"), location);
-    document.getElementsByClassName("comp")[0].id="hide"
-  }
-
 
 componentDidMount = () => {
   history.listen((location, action) => {
@@ -30,9 +20,7 @@ componentDidMount = () => {
     console.log(`The last navigation action was ${action}`)
     this.props.set(`${location.pathname}${location.search}${location.hash}`)
   })
-  
 }
-
 
 render() {
   return (
@@ -40,19 +28,15 @@ render() {
       <div className="App" >
         <header>
           <Header />
-          {/* <button onClick={this.click}>TEST</button> */}
         </header>
-        <div className="content">    
-            
+        <div className="content">       
           <Switch>
             <Route path="/code" component={Code} />
             <Route path="/design" component={Design} />
             <Route path="/blog" component={Blog} />
             <Route path="/" component={About} />
           </Switch>
-         
-        </div>
-       
+        </div>  
       </div>
     </BrowserRouter>
   );
