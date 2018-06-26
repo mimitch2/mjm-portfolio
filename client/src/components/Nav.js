@@ -4,6 +4,8 @@ import '../css/App.css'
 import {Link} from "react-router-dom";
 
 
+const linkNames = ["CODE", "DESIGN", "BLOG"]
+
 class Nav extends Component{
   state = {
     selected: "nav-item selected",
@@ -39,16 +41,24 @@ componentDidMount = () => {
    linkElements.forEach(a => a.className = this.state.unselected)
  }
 
+  
+
 
  render(){
    return ( 
      <div className="nav-main">
        <nav>
          <ul className="nav-list">
+         
+      
+
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
-           <Link to="/code" className={this.state.unselected} id="/code" onClick={(e) => this.handleClick(e)}>
+           {linkNames.map(name => <Link to={`/${name.toLowerCase()}`} className={this.state.selected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
+             {name} 
+           </Link>)}
+           {/* <Link to="/code" className={this.state.unselected} id="/code" onClick={(e) => this.handleClick(e)}>
            CODE  
            </Link>
            <Link to="/design" className={this.state.unselected} id="/design" onClick={(e) => this.handleClick(e)}>
@@ -56,7 +66,7 @@ componentDidMount = () => {
            </Link>
            <Link to="/blog" className={this.state.unselected} id="/blog" onClick={(e) => this.handleClick(e)}>
            BLOG  
-           </Link>
+           </Link> */}
          </ul>
        </nav>
      </div>

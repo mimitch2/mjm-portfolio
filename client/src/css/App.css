@@ -25,7 +25,7 @@
 /************* logo ***************************/
 
 .logo-div {
-  margin: 10px 0px 10px 18px;
+  margin: 10px 0px 4px 18px;
   display: flex;
   flex-direction: column;
   background-color: var(--orange-color);
