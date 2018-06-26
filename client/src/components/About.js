@@ -25,20 +25,20 @@ class About extends Component {
   render(){
     return (
       <div className="about-main comp">
-        <Fade>
+        {/* <Fade> */}
         
-          <div className="about-wrapper">
-            <h1 className="hello-text">HELLO</h1>
-            <div className="austin-image-div">
-              {/* {this.renderImage()} */}
-            </div>
-            <div style={{height:"1000px", backgroundColor: "red"}}>
+        <div className="about-wrapper">
+          <h1 className="hello-text">HELLO</h1>
+          <div className="austin-image-div">
+            {/* {this.renderImage()} */}
+          </div>
+          <div style={{height:"1000px", backgroundColor: "red"}}>
 Scroll Up and Down this page to see the parallax scrolling effect.
 This div is just here to enable scrolling.
 Tip: Try to remove the background-attachment property to remove the scrolling effect.
-            </div>
           </div>
-        </Fade>
+        </div>
+        {/* </Fade> */}
       </div>
     )
   }

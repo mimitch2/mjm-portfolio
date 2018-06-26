@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import '../css/App.css'
 import {Link} from "react-router-dom";
 
@@ -18,9 +18,9 @@ componentDidMount = () => {
 }
 
  componentDidUpdate = (prevProps) => {
-   if (prevProps.url !== this.props.url && this.props.url === "/"){
+   if (prevProps.url !== this.props.url){
      this.setClasses();
-     document.getElementById("/").className = this.state.selected
+     document.getElementById(this.props.url).className = this.state.selected
    }
  }
 
@@ -65,8 +65,9 @@ componentDidMount = () => {
  }
 }
 
-// Nav.propTypes = {
-//   prop: PropTypes.array,
-// }
+Nav.propTypes = {
+  url: PropTypes.string,
+  set: PropTypes.func
+}
 
 export default Nav;

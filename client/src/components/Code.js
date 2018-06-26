@@ -4,11 +4,11 @@ import Fade from 'react-reveal/Fade';
 
 const Code = (props) => {
   return (
-    <Fade>
-      <div className="code-main comp">
-        <img src="img/JS_graphoc.png" alt="" />
-      </div>
-    </Fade>
+    // <Fade>
+    <div className="code-main comp">
+      <img src="img/JS_graphoc.png" alt="" />
+    </div>
+    // </Fade>
   )
 }
 

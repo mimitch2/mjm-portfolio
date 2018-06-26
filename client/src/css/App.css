@@ -153,14 +153,13 @@
   height: 200px;
   font-size: 5.0em;
   position: absolute;
-  color: var(--blue-color)
+  color: var(--orange-color)
 }
 
 .austin-image-div {
-   display: flex;
-  
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
