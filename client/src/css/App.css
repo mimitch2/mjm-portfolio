@@ -139,21 +139,39 @@
 /************** about **************/
 
 .about-wrapper {
-
-  position: relative;
+  /* position: relative; */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .hello-text {
+  width: 100vw;
+  text-align: center;
+  height: 200px;
   font-size: 5.0em;
   position: absolute;
-  color: var(--blue-color)
+  color: var(--orange-color)
+}
+
+.austin-image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 2000px;
+  background-image: url(/img/IMG_0326.jpg)
 }
 
 #austin-image {
   width: 100%;
+
 }
 
 /************** footer **************/

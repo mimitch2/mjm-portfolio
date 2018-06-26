@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import '../css/App.css'
 import {Link} from "react-router-dom";
 
@@ -18,13 +18,17 @@ componentDidMount = () => {
 }
 
  componentDidUpdate = (prevProps) => {
-   if (prevProps.url !== this.props.url && this.props.url === "/"){
+   if (prevProps.url !== this.props.url){
      this.setClasses();
-     document.getElementById("/").className = this.state.selected
+     document.getElementById(this.props.url).className = this.state.selected
    }
  }
 
  handleClick = (e) => {
+   //  const lastSlash = e.target.href.lastIndexOf("/")
+   //  const path = e.target.href.substring(lastSlash)
+   //  console.log(path);
+   
    this.props.set(e.target.id)
    this.setClasses();
    e.target.className = this.state.selected
@@ -37,12 +41,10 @@ componentDidMount = () => {
 
 
  render(){
-   return (
-    
+   return ( 
      <div className="nav-main">
        <nav>
          <ul className="nav-list">
-       
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
@@ -55,18 +57,16 @@ componentDidMount = () => {
            <Link to="/blog" className={this.state.unselected} id="/blog" onClick={(e) => this.handleClick(e)}>
            BLOG  
            </Link>
-         
-      
          </ul>
        </nav>
      </div>
-
    )
  }
 }
 
-// Nav.propTypes = {
-//   prop: PropTypes.array,
-// }
+Nav.propTypes = {
+  url: PropTypes.string,
+  set: PropTypes.func
+}
 
 export default Nav;
