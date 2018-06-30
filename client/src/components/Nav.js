@@ -49,13 +49,10 @@ componentDidMount = () => {
      <div className="nav-main">
        <nav>
          <ul className="nav-list">
-         
-      
-
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
-           {linkNames.map(name => <Link to={`/${name.toLowerCase()}`} className={this.state.selected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
+           {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.selected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
            {/* <Link to="/code" className={this.state.unselected} id="/code" onClick={(e) => this.handleClick(e)}>

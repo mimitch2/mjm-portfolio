@@ -12,7 +12,7 @@ class About extends Component {
     this.renderImage()
     setTimeout(() => {
       this.setState({show: true})
-    }, 400);
+    }, 100);
   }
 
   renderImage = () => {
@@ -29,13 +29,14 @@ class About extends Component {
         
         <div className="about-wrapper">
           <h1 className="hello-text">HELLO</h1>
-          <div className="austin-image-div">
+          <div className="image-div austin-image">
             {/* {this.renderImage()} */}
           </div>
-          <div style={{height:"1000px", backgroundColor: "red"}}>
-Scroll Up and Down this page to see the parallax scrolling effect.
-This div is just here to enable scrolling.
-Tip: Try to remove the background-attachment property to remove the scrolling effect.
+          <div className="about-content">
+            Scroll Up and Down this page to see the parallax scrolling effect.
+          </div>
+          <div className="image-div js-image">
+            {/* {this.renderImage()} */}
           </div>
         </div>
         {/* </Fade> */}
