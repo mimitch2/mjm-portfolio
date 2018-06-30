@@ -5,7 +5,7 @@
 
 :root {
   --green-color: #BFBA3D;
-  --header-color: #e8e6decc;
+  --header-color: #e8e6de;
   --blue-color: #8AB2C2;
   --headertext-color: #1C3F94;
   --orange-color: #DC5620;
@@ -141,13 +141,43 @@
 .about-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+    /* perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; */
+
 }
+
+.chevron-div {
+position: absolute;
+margin-top: calc(100vh - 200px)
+
+}
+
+.fa-chevron-double-down {
+  animation: chevron 1s infinite alternate;
+  font-size: 60px;
+  color: var(--header-color)
+}
+
+@keyframes chevron {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: .8;
+  }
+}
+
 
 .about-content {
   position:relative;
   z-index:2;
   background-color: red;
-  height: calc(100vh - 200px);    
+  height: calc(100vh - 80px); 
+  padding-left: 10px;   
+  width: 100vw;
 }
 
 .hello-text {
@@ -170,7 +200,6 @@
   background-size: cover;
   width: 100vw;
   height: calc(100vh - 80px);
-  
 }
 .austin-image {
   background-image: url(/img/IMG_0326.jpg)
@@ -189,11 +218,4 @@
 
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
