@@ -27,10 +27,6 @@ componentDidMount = () => {
  }
 
  handleClick = (e) => {
-   //  const lastSlash = e.target.href.lastIndexOf("/")
-   //  const path = e.target.href.substring(lastSlash)
-   //  console.log(path);
-   
    this.props.set(e.target.id)
    this.setClasses();
    e.target.className = this.state.selected
@@ -41,8 +37,6 @@ componentDidMount = () => {
    linkElements.forEach(a => a.className = this.state.unselected)
  }
 
-  
-
 
  render(){
    return ( 
@@ -52,18 +46,11 @@ componentDidMount = () => {
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
-           {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.selected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
+
+           {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
-           {/* <Link to="/code" className={this.state.unselected} id="/code" onClick={(e) => this.handleClick(e)}>
-           CODE  
-           </Link>
-           <Link to="/design" className={this.state.unselected} id="/design" onClick={(e) => this.handleClick(e)}>
-           DESIGN  
-           </Link>
-           <Link to="/blog" className={this.state.unselected} id="/blog" onClick={(e) => this.handleClick(e)}>
-           BLOG  
-           </Link> */}
+
          </ul>
        </nav>
      </div>
@@ -77,3 +64,60 @@ Nav.propTypes = {
 }
 
 export default Nav;
+
+
+
+// CSS
+
+
+// .nav-main {
+//   margin-bottom: -34px;
+//   width: max-content;
+//   overflow-y: hidden;
+// }
+
+
+// .nav-list {
+//  list-style-type: none;
+//  display: flex; 
+//  flex-direction: row;
+// }
+
+// .nav-item {
+//   position: relative;
+//   color: var(--headertext-color);
+//   display: inline;
+//   margin: 0px 20px 0px 20px;
+//   cursor: pointer;
+//   text-decoration: none;
+// }
+
+// .nav-item:before {
+//   content: "";
+//   position: absolute;
+//   width: 100%;
+//   height: 2px;
+//   bottom: 0;
+//   left: 0;
+//   background-color: grey;
+//   /* visibility: visable; */
+//   -webkit-transform: scaleX(0);
+//   transform: scaleX(0);
+//   -webkit-transition: all 0.3s ease-in-out 0s;
+//   transition: all 0.3s ease-in-out 0s;
+// }
+
+// .nav-item.selected:before {
+//   visibility: visible;
+//   -webkit-transform: scaleX(1.1);
+//   transform: scaleX(1.1);
+//   background-color: var(--orange-color);
+  
+// }
+
+// .nav-item:hover:before {
+//   color: var(--orange-color);
+//   visibility: visible;
+//   -webkit-transform: scaleX(1.1);
+//   transform: scaleX(1.1);
+// }

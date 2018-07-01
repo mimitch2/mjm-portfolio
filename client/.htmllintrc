@@ -11,7 +11,7 @@
     "class-style": "dash",
     "id-class-style": "dash",
     "tag-bans": false,
-    "img-req-alt": false,
+    "img-req-alt": true,
     "attr-bans": false,
     "tag-close": true,
     "tag-name-match": true
