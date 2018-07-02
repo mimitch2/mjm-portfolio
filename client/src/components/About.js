@@ -2,7 +2,11 @@ import React, {Component} from 'react'
 import '../css/App.css'
 // import Fade from 'react-reveal/Fade';
 // import scrollSnapPolyfill from 'css-scroll-snap-polyfill'
- 
+
+// window.addEventListener("scroll", function (event) {
+//   var scroll = this.scrollY;
+//   console.log(scroll)
+// });
 
 // window.addEventListener('resize', scroll, true);
 // window.addEventListener('scroll', scroll, true)
@@ -12,25 +16,20 @@ import '../css/App.css'
 
 // function scroll(){
 //   console.log("scroll");
- 
-//   if (window.pageYOffset > viewerHeight() / 2 && window.pageYOffset < viewerHeight() + 100) {
-    
+//   if (window.pageYOffset > viewerHeight() / 1.5 && window.pageYOffset < viewerHeight() + 100) {
+//     window.removeEventListener('scroll', scroll, true)
 //     setTimeout(() => {
-//       window.removeEventListener('scroll', scroll, true)
+//       window.scroll({
+//         top: viewerHeight(), 
+//         left: 0, 
+//         behavior: 'smooth' 
+//       });
 //     }, 100);
-//     window.scroll({
-//       top: viewerHeight(), 
-//       left: 0, 
-//       behavior: 'smooth' 
-//     });
 //     setTimeout(() => {
 //       window.addEventListener('scroll', scroll, true)
-//     }, 200);
+//     }, 400);
 //   }
 // }
-
-
-
 
 
 class About extends Component {
@@ -56,14 +55,6 @@ class About extends Component {
   }
 
 
-
-
-
-
-
-
-
-
   render(){
     return (
       <div className="about-main comp" id="main">
@@ -71,18 +62,18 @@ class About extends Component {
         <div className="about-wrapper" id="container" >
 
           <div className="intro-text" >  
-            <h1 className="hello-text" >HELLO</h1>
+            <h1 className="hello-text" >HENLO FREINDO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             {/* <p className="intro-text-lower">SCROLL</p>   */}
           </div>
-  
-         
     
           <div className="image-div austin-image"></div>
           <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
 
           <div className="about-content content-one">
-             Scroll Up and Down this page to see the parallax scrolling effect.
+            <div className ="content-text content-one-text">
+              <h1> SAY SOMETHING FUCKING AWESOME HERE</h1>
+            </div>
           </div>
 
           <div className="image-div js-image"></div>
