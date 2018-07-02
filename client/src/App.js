@@ -10,7 +10,6 @@ import Blog from './components/Blog'
 
 
 const history = createHistory()
-// const location = history.location
  
 class App extends Component {
 
@@ -21,6 +20,8 @@ componentDidMount = () => {
     this.props.set(`${location.pathname}${location.search}${location.hash}`)
   })
 }
+
+
 
 render() {
   return (

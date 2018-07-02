@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/App.css'
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
 const Code = (props) => {
   return (
