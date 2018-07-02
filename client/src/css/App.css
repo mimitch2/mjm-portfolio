@@ -234,8 +234,14 @@
 }
 
 .skill-icon {
-  font-size: 10.0em;
+  margin: 0px 8px 0px 8px;
+  font-size: 8.0em;
   color: var(--orange-color);
+}
+
+.redux-icon {
+  margin: 0px 8px 0px 8px;
+  width: 20%;
 }
 
 .austin-image {
