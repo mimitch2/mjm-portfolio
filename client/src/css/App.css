@@ -4,15 +4,6 @@
   animation: fadeIn 2s ease-in;
 }
 
-:root {
-  --green-color: #BFBA3D;
-  --header-color: #e8e6de;
-  --headeropacity-color: #e8e6decc;
-  --blue-color: #8AB2C2;
-  --headertext-color: #1C3F94;
-  --orange-color: #DC5620;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -20,6 +11,15 @@
   to {
     opacity: 1;
   }
+}
+
+:root {
+  --green-color: #BFBA3D;
+  --header-color: #e8e6de;
+  --headeropacity-color: #e8e6decc;
+  --blue-color: #8AB2C2;
+  --headertext-color: #1C3F94;
+  --orange-color: #DC5620;
 }
 
 .header-main {
@@ -219,8 +219,6 @@
   background-size: cover;
   width: 100vw;
   height: calc(100vh - 80px);
-  
- 
 }
 
 .icon-div {
