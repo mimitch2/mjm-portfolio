@@ -76,7 +76,14 @@ class About extends Component {
             </div>
           </div>
 
-          <div className="image-div js-image"></div>
+          <div className="icon-div">
+            <i class="fab skill-icon fa-html5"></i>
+            <i class="fab skill-icon fa-css3-alt"></i>
+            <i class="fab skill-icon fa-react"></i>
+            <i class="fab skill-icon fa-js-square"></i>
+            <i class="fas skill-icon fa-server"></i>
+            <i class="fab skill-icon fa-git-square"></i>
+          </div>
 
           <div className="about-content content-two">
              Scroll Up and Down this page to see the parallax scrolling effect.

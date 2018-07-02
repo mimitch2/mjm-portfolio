@@ -219,16 +219,32 @@
   background-size: cover;
   width: 100vw;
   height: calc(100vh - 80px);
+  
  
+}
+
+.icon-div {
+  padding: 20px 0px 20px 0px;
+  background-color: var(--header-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.skill-icon {
+  font-size: 10.0em;
+  color: var(--orange-color);
 }
 
 .austin-image {
   background-image: url(/img/IMG_0326.jpg);
 }
 
-.js-image {
-  background-image: url(/img/JS_graphoc.png);
-}
+/* .js-image {
+  background-image: url(/img/wire-frame.jpg);
+} */
 
 .about-content {
 
