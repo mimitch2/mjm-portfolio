@@ -4,7 +4,10 @@ import '../css/App.css'
 import {Link} from "react-router-dom";
 
 
-const linkNames = ["CODE", "DESIGN", "BLOG"]
+
+
+const linkNames = ["PORTFOLIO", "DESIGN", "BLOG"]
+
 
 class Nav extends Component{
   state = {
@@ -14,16 +17,34 @@ class Nav extends Component{
 
 componentDidMount = () => {
   const path = window.location.pathname
-  this.props.set(path)
+  const checkLink = path.substr(1)
+  console.log(linkNames.includes(checkLink.toUpperCase()), checkLink);
+  
   this.setClasses();
-  document.getElementById(path).className = this.state.selected
+  if (linkNames.includes(checkLink.toUpperCase())) {
+    document.getElementById(path).className = this.state.selected
+    this.props.set(path)
+  }else {
+    document.getElementById("/").className = this.state.selected
+    this.props.set("/")
+  }
+  
 }
 
  componentDidUpdate = (prevProps) => {
+   const path = window.location.pathname
+   const checkLink = path.substr(1)
+  
    if (prevProps.url !== this.props.url){
-     this.setClasses();
-     document.getElementById(this.props.url).className = this.state.selected
+     if (linkNames.includes(checkLink.toUpperCase())) {
+       document.getElementById(path).className = this.state.selected
+       this.props.set(path)
+     }else {
+       document.getElementById("/").className = this.state.selected
+       this.props.set("/")
+     }
    }
+   this.setClasses();
  }
 
  handleClick = (e) => {
@@ -37,7 +58,6 @@ componentDidMount = () => {
    linkElements.forEach(a => a.className = this.state.unselected)
  }
 
-
  render(){
    return ( 
      <div className="nav-main">
@@ -50,7 +70,6 @@ componentDidMount = () => {
            {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
-
          </ul>
        </nav>
      </div>

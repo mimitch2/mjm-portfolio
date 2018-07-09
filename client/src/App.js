@@ -4,7 +4,7 @@ import Header from './components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
-import Code from './components/Code'
+import Portfolio from './components/Portfolio'
 import Design from './components/Design'
 import Blog from './components/Blog'
 
@@ -21,8 +21,6 @@ componentDidMount = () => {
   })
 }
 
-
-
 render() {
   return (
     <BrowserRouter>
@@ -32,7 +30,7 @@ render() {
         </header>
         <div className="content">       
           <Switch>
-            <Route path="/code" component={Code} />
+            <Route path="/portfolio" component={Portfolio} />
             <Route path="/design" component={Design} />
             <Route path="/blog" component={Blog} />
             <Route path="/" component={About} />
@@ -45,3 +43,4 @@ render() {
 }
 
 export default App;
+
