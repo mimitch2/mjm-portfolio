@@ -16,11 +16,21 @@ class Nav extends Component{
   }
 
 componentDidMount = () => {
+  this.setUnselected();
+  this.setSelected();
+  
+}
+
+ componentDidUpdate = (prevProps) => {
+   if (prevProps.url !== this.props.url){
+     this.setUnselected();
+     this.setSelected();
+   }
+ }
+
+setSelected = () => {
   const path = window.location.pathname
   const checkLink = path.substr(1)
-  console.log(linkNames.includes(checkLink.toUpperCase()), checkLink);
-  
-  this.setClasses();
   if (linkNames.includes(checkLink.toUpperCase())) {
     document.getElementById(path).className = this.state.selected
     this.props.set(path)
@@ -28,35 +38,20 @@ componentDidMount = () => {
     document.getElementById("/").className = this.state.selected
     this.props.set("/")
   }
-  
 }
 
- componentDidUpdate = (prevProps) => {
-   const path = window.location.pathname
-   const checkLink = path.substr(1)
-  
-   if (prevProps.url !== this.props.url){
-     if (linkNames.includes(checkLink.toUpperCase())) {
-       document.getElementById(path).className = this.state.selected
-       this.props.set(path)
-     }else {
-       document.getElementById("/").className = this.state.selected
-       this.props.set("/")
-     }
-   }
-   this.setClasses();
+ setUnselected = () => {
+   const linkElements = root.querySelectorAll('nav a')
+   linkElements.forEach(a => a.className = this.state.unselected)
  }
 
  handleClick = (e) => {
    this.props.set(e.target.id)
-   this.setClasses();
+   this.setUnselected();
    e.target.className = this.state.selected
  }
 
- setClasses = () => {
-   const linkElements = root.querySelectorAll('nav a')
-   linkElements.forEach(a => a.className = this.state.unselected)
- }
+
 
  render(){
    return ( 
