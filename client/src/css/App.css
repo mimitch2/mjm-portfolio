@@ -4,6 +4,19 @@
   animation: fadeIn 2s ease-in;
 }
 
+.basic-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bad-url {
+  width: 100vw;
+  height: calc(100vh - 130px);
+
+}
+
 .portfolio-main {
   animation: slide-left .3s;
 }

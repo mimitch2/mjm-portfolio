@@ -4,10 +4,10 @@ import '../css/App.css'
 // import Fade from 'react-reveal/Fade';
 // import scrollSnapPolyfill from 'css-scroll-snap-polyfill'
 
-// window.addEventListener("scroll", function (event) {
-//   var scroll = this.scrollY;
-//   console.log(scroll)
-// });
+window.addEventListener("scroll", function (event) {
+  var scroll = this.scrollY;
+  console.log(scroll)
+});
 
 // window.addEventListener('resize', scroll, true);
 // window.addEventListener('scroll', scroll, true)

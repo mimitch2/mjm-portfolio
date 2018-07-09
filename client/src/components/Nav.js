@@ -31,13 +31,15 @@ componentDidMount = () => {
 setSelected = () => {
   const path = window.location.pathname
   const checkLink = path.substr(1)
-  if (linkNames.includes(checkLink.toUpperCase())) {
+  if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
     document.getElementById(path).className = this.state.selected
     this.props.set(path)
-  }else {
-    document.getElementById("/").className = this.state.selected
-    this.props.set("/")
   }
+  // else {
+  //   document.getElementById("/").className = this.state.selected
+  //   this.props.set("/")
+  //   // window.location.assign("/")
+  // }
 }
 
  setUnselected = () => {
