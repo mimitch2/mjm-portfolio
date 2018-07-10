@@ -86,7 +86,7 @@ class About extends Component {
             <i className="fab skill-icon fa-css3-alt"></i>
             <i className="fab skill-icon fa-node"></i>
             <i className="fab skill-icon fa-react"></i>
-            <ReduxIcon className="redux-icon"/>
+            <ReduxIcon/>
           
             {/* <i class="fas skill-icon fa-server"></i> */}
             <i className="fab skill-icon fa-git-square"></i>
