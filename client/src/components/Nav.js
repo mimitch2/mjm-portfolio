@@ -4,7 +4,10 @@ import '../css/App.css'
 import {Link} from "react-router-dom";
 
 
-const linkNames = ["CODE", "DESIGN", "BLOG"]
+
+
+const linkNames = ["PORTFOLIO", "DESIGN", "BLOG"]
+
 
 class Nav extends Component{
   state = {
@@ -13,29 +16,43 @@ class Nav extends Component{
   }
 
 componentDidMount = () => {
-  const path = window.location.pathname
-  this.props.set(path)
-  this.setClasses();
-  document.getElementById(path).className = this.state.selected
+  this.setUnselected();
+  this.setSelected();
+  
 }
 
  componentDidUpdate = (prevProps) => {
    if (prevProps.url !== this.props.url){
-     this.setClasses();
-     document.getElementById(this.props.url).className = this.state.selected
+     this.setUnselected();
+     this.setSelected();
    }
+ }
+
+setSelected = () => {
+  const path = window.location.pathname
+  const checkLink = path.substr(1)
+  if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
+    document.getElementById(path).className = this.state.selected
+    this.props.set(path)
+  }
+  // else {
+  //   document.getElementById("/").className = this.state.selected
+  //   this.props.set("/")
+  //   // window.location.assign("/")
+  // }
+}
+
+ setUnselected = () => {
+   const linkElements = root.querySelectorAll('nav a')
+   linkElements.forEach(a => a.className = this.state.unselected)
  }
 
  handleClick = (e) => {
    this.props.set(e.target.id)
-   this.setClasses();
+   this.setUnselected();
    e.target.className = this.state.selected
  }
 
- setClasses = () => {
-   const linkElements = root.querySelectorAll('nav a')
-   linkElements.forEach(a => a.className = this.state.unselected)
- }
 
 
  render(){
@@ -50,7 +67,6 @@ componentDidMount = () => {
            {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
-
          </ul>
        </nav>
      </div>

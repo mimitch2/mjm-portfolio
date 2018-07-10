@@ -4,10 +4,10 @@ import '../css/App.css'
 // import Fade from 'react-reveal/Fade';
 // import scrollSnapPolyfill from 'css-scroll-snap-polyfill'
 
-// window.addEventListener("scroll", function (event) {
-//   var scroll = this.scrollY;
-//   console.log(scroll)
-// });
+window.addEventListener("scroll", function (event) {
+  var scroll = this.scrollY;
+  console.log(scroll)
+});
 
 // window.addEventListener('resize', scroll, true);
 // window.addEventListener('scroll', scroll, true)
@@ -63,7 +63,7 @@ class About extends Component {
         <div className="about-wrapper" id="container" >
 
           <div className="intro-text" >  
-            <h1 className="hello-text" >HENLO FREINDO</h1>
+            <h1 className="hello-text" >HELLO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             {/* <p className="intro-text-lower">SCROLL</p>   */}
           </div>
@@ -73,19 +73,23 @@ class About extends Component {
 
           <div className="about-content content-one">
             <div className ="content-text content-one-text">
-              <h1> SAY SOMETHING FUCKING AWESOME HERE</h1>
+              <div className ="content-text-inner">
+                <h1> SAY SOMETHING FUCKING AWESOME HERE</h1>
+              </div>
+             
             </div>
           </div>
 
           <div className="icon-div">
-            <i class="fab skill-icon fa-html5"></i>
-            <i class="fab skill-icon fa-css3-alt"></i>
-            <i class="fab skill-icon fa-node"></i>
-            <i class="fab skill-icon fa-react"></i>
+            <i className="fab skill-icon fa-html5"></i>
+            <i className="fab skill-icon fa-js-square"></i>
+            <i className="fab skill-icon fa-css3-alt"></i>
+            <i className="fab skill-icon fa-node"></i>
+            <i className="fab skill-icon fa-react"></i>
             <ReduxIcon className="redux-icon"/>
-            <i class="fab skill-icon fa-js-square"></i>
-            <i class="fas skill-icon fa-server"></i>
-            <i class="fab skill-icon fa-git-square"></i>
+          
+            {/* <i class="fas skill-icon fa-server"></i> */}
+            <i className="fab skill-icon fa-git-square"></i>
           </div>
 
           <div className="about-content content-two">
