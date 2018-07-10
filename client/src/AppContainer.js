@@ -11,7 +11,7 @@ function mapStateToProps(state) {
   
 function mapDispatchToProps(dispatch) {
   return {
-    set:function (url){
+    set: function (url) {
       const action = changeUrl(url);
       dispatch(action);
     },

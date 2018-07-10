@@ -35,11 +35,6 @@ setSelected = () => {
     document.getElementById(path).className = this.state.selected
     this.props.set(path)
   }
-  // else {
-  //   document.getElementById("/").className = this.state.selected
-  //   this.props.set("/")
-  //   // window.location.assign("/")
-  // }
 }
 
  setUnselected = () => {
@@ -64,7 +59,7 @@ setSelected = () => {
            ABOUT 
            </Link>
 
-           {linkNames.map((name, index) => <Link key={index} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
+           {linkNames.map((name) => <Link key={name} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
          </ul>

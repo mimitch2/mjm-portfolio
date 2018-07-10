@@ -320,6 +320,10 @@
   align-items: center;
 }
 
+.bio-main {
+  padding: 0px 30px 0px 30px
+}
+
 .content-one {
   background-image: url(/img/web-design-bw.jpg);
   /* -webkit-filter: blur(3px);

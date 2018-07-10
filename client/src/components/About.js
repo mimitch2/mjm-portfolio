@@ -73,8 +73,13 @@ class About extends Component {
 
           <div className="about-content content-one">
             <div className ="content-text content-one-text">
-              <div className ="content-text-inner">
-                <h1> SAY SOMETHING FUCKING AWESOME HERE</h1>
+              <div className ="content-text-inner basic-flex">
+                <h2 className="bio-quote"> "BEFORE I ASK MYSELF IF I CAN DO IT, I ASK MYSELF SHOULD I DO IT"</h2>
+                <p className="bio-main">
+                I spent nearly 20 years at Apple as a software qa engineer and manager. What I learned was that anything is possible, but what's more important is what is right for the end user. This ethos is embedded in my mind, and it's my guiding principle when designing and implementing web applications. 
+
+                I specialize in React based frontend websites and applications, as well as backend services. 
+                </p>
               </div>
              
             </div>
