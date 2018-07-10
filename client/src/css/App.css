@@ -1,7 +1,7 @@
 .App {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 1s ease-in;
 }
 
 .basic-flex {
@@ -271,13 +271,12 @@
 
 .skill-icon {
   margin: 0px 8px 0px 8px;
-  font-size: 8.0em;
+  font-size: 5.0em;
   color: var(--orange-color);
 }
 
 .redux-icon {
   margin: 0px 8px 0px 8px;
-  width: 20%;
 }
 
 .austin-image {
