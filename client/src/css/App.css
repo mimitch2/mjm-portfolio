@@ -1,3 +1,15 @@
+
+:root {
+  --green-color: #BFBA3D;
+  --header-color: #e8e6de;
+  --headeropacity-color: #e8e6decc;
+  --blue-color: #8AB2C2;
+  /* --headertext-color: #1C3F94; */
+  --headertext-color: black;
+  --orange-color: #DC5620;
+}
+
+
 .App {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
@@ -49,15 +61,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(97, 97, 97, .7); 
-}
-
-:root {
-  --green-color: #BFBA3D;
-  --header-color: #e8e6de;
-  --headeropacity-color: #e8e6decc;
-  --blue-color: #8AB2C2;
-  --headertext-color: #1C3F94;
-  --orange-color: #DC5620;
 }
 
 .header-main {
@@ -271,8 +274,8 @@
 
 .skill-icon {
   margin: 0px 8px 0px 8px;
-  font-size: 5.0em;
-  color: var(--orange-color);
+  font-size: 2.0em;
+  color: var(--headertext-color);
 }
 
 .redux-icon {

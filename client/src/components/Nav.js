@@ -48,8 +48,6 @@ setSelected = () => {
    e.target.className = this.state.selected
  }
 
-
-
  render(){
    return ( 
      <div className="nav-main">

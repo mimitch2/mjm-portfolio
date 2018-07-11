@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
-// import Fade from 'react-reveal/Fade';
-// import scrollSnapPolyfill from 'css-scroll-snap-polyfill'
 
 window.addEventListener("scroll", function (event) {
   var scroll = this.scrollY;
@@ -59,9 +57,7 @@ class About extends Component {
   render(){
     return (
       <div className="about-main comp" id="main">
-       
-        <div className="about-wrapper" id="container" >
-
+        <div className="about-wrapper" id="container">
           <div className="intro-text" >  
             <h1 className="hello-text" >HELLO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
@@ -80,26 +76,32 @@ class About extends Component {
 
                 I specialize in React based frontend websites and applications, as well as backend services. 
                 </p>
+                <div>
+                  <i className="fab skill-icon fa-html5"></i>
+                  <i className="fab skill-icon fa-js-square"></i>
+                  <i className="fab skill-icon fa-css3-alt"></i>
+                  <i className="fab skill-icon fa-node"></i>
+                  <i className="fab skill-icon fa-react"></i>
+                  <i className="fab skill-icon fa-git-square"></i>
+                </div>
               </div>
              
             </div>
+         
           </div>
 
-          <div className="icon-div">
+          {/* <div className="icon-div">
             <i className="fab skill-icon fa-html5"></i>
             <i className="fab skill-icon fa-js-square"></i>
             <i className="fab skill-icon fa-css3-alt"></i>
             <i className="fab skill-icon fa-node"></i>
             <i className="fab skill-icon fa-react"></i>
-            <ReduxIcon/>
-          
-            {/* <i class="fas skill-icon fa-server"></i> */}
             <i className="fab skill-icon fa-git-square"></i>
-          </div>
+          </div> */}
 
-          <div className="about-content content-two">
+          {/* <div className="about-content content-two">
              Scroll Up and Down this page to see the parallax scrolling effect.
-          </div>
+          </div> */}
 
         </div>
 

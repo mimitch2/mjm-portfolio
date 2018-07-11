@@ -39,7 +39,6 @@ render() {
             <Route path="/blog" component={Blog} />
             <Route exact path="/" component={About} />
             <Route path="*" component={Oops} />
-            
           </Switch>
         </div>  
       </div>
