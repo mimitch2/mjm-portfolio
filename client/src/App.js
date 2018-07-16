@@ -14,37 +14,34 @@ const history = createHistory()
  
 class App extends Component {
 
-componentDidMount = () => {
-  console.log(this.props.url);
-  history.listen((location, action) => {
-    // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-    // console.log(`The last navigation action was ${action}`)
-    this.props.set(`${location.pathname}${location.search}${location.hash}`)
-  })
-}
+ componentDidMount = () => {
+   history.listen((location, action) => {
+     // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+     // console.log(`The last navigation action was ${action}`)
+     this.props.set(`${location.pathname}${location.search}${location.hash}`)
+   })
+ }
 
-
-
-render() {
-  return (
-    <BrowserRouter>
-      <div className="App" >
-        <header>
-          <Header />
-        </header>
-        <div className="content">       
-          <Switch>
-            <Route path="/portfolio" component={Portfolio} />
-            <Route path="/design" component={Design} />
-            <Route path="/blog" component={Blog} />
-            <Route exact path="/" component={About} />
-            <Route path="*" component={Oops} />
-          </Switch>
-        </div>  
-      </div>
-    </BrowserRouter>
-  );
-}
+ render = () => {
+   return (
+     <BrowserRouter>
+       <div className="App" >
+         <header>
+           <Header />
+         </header>
+         <div className="content">       
+           <Switch>
+             <Route path="/portfolio" component={Portfolio} />
+             <Route path="/design" component={Design} />
+             <Route path="/blog" component={Blog} />
+             <Route exact path="/" component={About} />
+             <Route path="*" component={Oops} />
+           </Switch>
+         </div>  
+       </div>
+     </BrowserRouter>
+   );
+ }
 }
 
 export default App;
