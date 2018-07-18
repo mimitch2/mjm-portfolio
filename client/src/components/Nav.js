@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 import '../css/App.css'
 import {Link} from "react-router-dom";
 
-
-
-
 const linkNames = ["PORTFOLIO", "DESIGN", "BLOG"]
-
 
 class Nav extends Component{
   state = {
@@ -15,27 +11,29 @@ class Nav extends Component{
     unselected: "nav-item"
   }
 
-componentDidMount = () => {
-  this.setUnselected();
-  this.setSelected();
-  
-}
+ componentDidMount = () => {
+   this.setAll()
+ }
 
  componentDidUpdate = (prevProps) => {
    if (prevProps.url !== this.props.url){
-     this.setUnselected();
-     this.setSelected();
+     this.setAll()
    }
  }
 
-setSelected = () => {
-  const path = window.location.pathname
-  const checkLink = path.substr(1)
-  if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
-    document.getElementById(path).className = this.state.selected
-    this.props.set(path)
-  }
-}
+ setAll = () => {
+   this.setUnselected();
+   this.setSelected();
+ }
+
+ setSelected = () => {
+   const path = window.location.pathname
+   const checkLink = path.substr(1)
+   if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
+     document.getElementById(path).className = this.state.selected
+     this.props.set(path)
+   }
+ }
 
  setUnselected = () => {
    const linkElements = root.querySelectorAll('nav a')
@@ -48,13 +46,12 @@ setSelected = () => {
    e.target.className = this.state.selected
  }
 
-
-
- render(){
+ render = () => {
    return ( 
      <div className="nav-main">
        <nav>
          <ul className="nav-list">
+
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
@@ -62,6 +59,7 @@ setSelected = () => {
            {linkNames.map((name) => <Link key={name} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 
            </Link>)}
+
          </ul>
        </nav>
      </div>
