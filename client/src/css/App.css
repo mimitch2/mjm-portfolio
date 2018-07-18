@@ -125,7 +125,10 @@
   display: flex;
   justify-content: center;
   margin-bottom: -34px;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  min-width: max-content;
+  background-color: pink;
+
 }
 
 
@@ -134,8 +137,8 @@
   list-style-type: none;
   display: flex; 
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   padding: 0;
   width: 30vw;
 }
