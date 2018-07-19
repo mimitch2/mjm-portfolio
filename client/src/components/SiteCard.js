@@ -6,7 +6,9 @@ const SiteCard = (props) => {
    
     <div className="site-card">
       
-      <div className="card-overlay"></div>
+      <div className="card-overlay basic-flex-row">
+      
+      </div>
 
       {props.image}
     
