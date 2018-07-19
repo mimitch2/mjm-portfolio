@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ReduxIcon from './ReduxIcon';
+// import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
 
 
@@ -43,7 +43,7 @@ class About extends Component {
           <div className="about-content content-one basic-flex-row">
             <div className ="content-text basic-flex-row">
               <div className ="content-text-inner basic-flex-col">
-                <h2 className="bio-quote"></h2>
+                {/* <h2 className="bio-quote"></h2> */}
                 <p className="bio-main">
                 I spent nearly 20 years at Apple as a software qa engineer and manager. What I learned was that anything is possible, but what's more important is what is right for the end user. This ethos is embedded in my mind, and it's my guiding principle when designing and implementing web applications. 
 
