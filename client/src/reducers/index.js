@@ -7,6 +7,13 @@ function url(state = "", action) {
   return state;
 }
 
+function cssShow(state = "", action) {
+  if (action.type === "SET_CSS") {
+    return action.value;
+  }
+  return state;
+}
+
 // function favorites(state = [], action) {
 //   if (action.type === "FAVORITES_LOADED") {
 //     return action.value;
@@ -16,7 +23,7 @@ function url(state = "", action) {
 
 
 const rootReducer = combineReducers({
-  url
+  url, cssShow
 });
 
 export default rootReducer;
