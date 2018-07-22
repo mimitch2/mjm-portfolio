@@ -8,7 +8,7 @@ const Loading = (props) => {
 //   const loadingDiv = document.getElementById("loading-div")
 
   setTimeout(() => {
-    document.getElementById("loading-div").className = "hidden"
+    document.getElementById("loading-div").className = "loading hidden"
   }, 3000);
   return (
     <div className="loading basic-flex-row" id="loading-div">

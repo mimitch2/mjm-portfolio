@@ -41,10 +41,23 @@ class App extends Component {
    return (
      <BrowserRouter>
        <div className="App" >
+         <div className="pre-load-all-hidden">
+           {/* <Portfolio /> 
+           <Design />
+           <Blog />
+           <About /> */}
+           <img src="/img/IMG_0326.jpg" alt=""/>
+           <img src="/img/old_portfolio_site.png" alt=""/>
+           <img src="/img/monster_site.png" alt=""/>
+           <img src="/img/cocktail_site.png" alt=""/>
+           <img src="/img/web-design-bw.jpg" alt=""/>
+           
+         </div>
          <header>
            <Header />
          </header>
          <Loading /> 
+     
          <div className={this.state.cssShow}> 
           
 
