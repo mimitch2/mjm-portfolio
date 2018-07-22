@@ -24,13 +24,13 @@ class Portfolio extends Component {
     return (
       <div className="portfolio-main site-cards-main">
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/cocktail_site.png" alt="cocktail website" className="cocktail-card-image card-image"/>}/>
+          <SiteCard image={<img src="img/cocktail_site.png" alt="cocktail website" className="cocktail-card-image card-image"/>} id="card-overlay-cocktail"/>
         </div>
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/old_portfolio_site.png" alt="portfolio website" className="portfolio-card-image card-image"/>}/>
+          <SiteCard image={<img src="img/old_portfolio_site.png" alt="portfolio website" className="portfolio-card-image card-image"/>} id="card-overlay-portfolio"/>
         </div>
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/monster_site.png" alt="monster website" className="monster-card-image card-image"/>}/>
+          <SiteCard image={<img src="img/monster_site.png" alt="monster website" className="monster-card-image card-image"/>} id="card-overlay-monster"/>
         </div>
       </div>
     )

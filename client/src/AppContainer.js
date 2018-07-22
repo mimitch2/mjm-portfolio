@@ -6,12 +6,13 @@ import { changeUrl } from "./actions";
 function mapStateToProps(state) {
   return {
     url: state.url,
+    cssShow: state.cssShow
   };
 }
   
 function mapDispatchToProps(dispatch) {
   return {
-    set: function (url) {
+    setURL: function (url) {
       const action = changeUrl(url);
       dispatch(action);
     },

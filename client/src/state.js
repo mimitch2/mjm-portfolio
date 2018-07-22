@@ -1,5 +1,6 @@
 
 export default {
-  url: ""
+  url: "",
+  cssShow: "comp show"
 };
   

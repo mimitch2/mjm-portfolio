@@ -1,17 +1,18 @@
 import React from 'react'
 import '../css/App.css'
 
-const SiteCard = (props) => {
-  return (
-   
-    <div className="site-card">
-      
-      <div className="card-overlay basic-flex-row">
-      
-      </div>
 
-      {props.image}
+
+// this.classList.toggle("card-overlay")
+// this.classList.contains("foo")
+
+const SiteCard = (props) => {
     
+  return (
+    <div className="site-card">
+      <div className={`card-overlay ${props.id} basic-flex-row`}>
+      </div>
+      {props.image}
     </div>
   )
 }

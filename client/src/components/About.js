@@ -4,30 +4,14 @@ import '../css/App.css'
 
 
 class About extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      show: false
-    }
-  }
-    
-  componentDidMount=()=>{
-    // window.addEventListener("scroll", function (event) {
-    //   const scroll = this.scrollY;
-    //   console.log(scroll)
-    // });
-  }
 
-  // componentWillUnmount = () => {
 
+  // constructor(props) {
+  //   super(props)
+  //   // this.state = {
+  //   //   cssShow: "about-main comp hidden"
+  //   // }
   // }
-
-  renderImage = () => {
-    // if(!this.state.show){
-    //   return <img src="img/IMG_0326_low.jpg" alt="Austin skyline" id="austin-image"/>
-    // }
-    return <img src="img/IMG_0326.jpg" alt="Austin skyline" id="austin-image"/>
-  }
 
 
   render(){
@@ -38,7 +22,8 @@ class About extends Component {
             <h1 className="hello-text" >HELLO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
           </div>
-          <div className="image-div austin-image"></div>
+          <div className="image-div austin-image-div">
+          </div>
           <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
           <div className="about-content content-one basic-flex-row">
             <div className ="content-text basic-flex-row">
