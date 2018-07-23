@@ -16,20 +16,42 @@
   --alttwo-color: #f26d20;
 }
 
+.basic-flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basic-flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .App {
-  /* width: 100vw;
-  height: 100vh; */
-  background: rgb(250, 250, 250);
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
-
 }
 
 .pre-load-all-hidden {
 display: none;
-/* opacity: 0; */
 }
-
 
 .loading {
   width: 100vw;
@@ -41,7 +63,6 @@ display: none;
   display: none;
   animation: fadeOut 1s ease-out;
 }
-
 
 @keyframes fadeOut {
   from {
@@ -127,34 +148,6 @@ display: none;
 }
 
 
-.basic-flex-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.basic-flex-col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .bad-url {
   width: 100vw;
   height: calc(100vh - 130px);
@@ -191,7 +184,7 @@ display: none;
 }
 
 .header-main {
-  z-index: 4;
+  z-index: 100;
   position: fixed;
   width: 100vw;
   background-color: var(--header-color);
@@ -489,20 +482,34 @@ display: none;
 
 .content-text {
   background-color: var(--headeropacity-color);
-  color: var(--headertext-color);
   width: 90%;
   height: 80%;
   position: absolute;
 }
 
 .content-text-inner {
-  width: 90%;
-  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
   border: 4px solid var(--orange-color);
 }
 
+.headshot {
+  grid-column-start: 1;
+  width: 100%;
+  padding: 20px;
+}
+
 .bio-main {
-  padding: 0px 30px 0px 30px
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-column: span 3;
+  font-size: 1.4em;
+  font-weight: 300;
+  padding: 20px;
 }
 
 .skill-icon-div {
@@ -571,43 +578,54 @@ display: none;
 
 .site-cards-main {
   width: 100vw;
-  margin: 20px;
+  margin: 40px ;
   display: grid;
   grid-gap: 28px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   /* grid-template-rows: repeat(auto-fill, minmax(300px, 1fr)); */
   grid-auto-flow: row;
   justify-items: center;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* .card-div {
+  background-color: pink;
+  height: 90%
+} */
 .site-card {
   min-width: 350px;
   max-width: 500px;
-  height: auto;
   box-shadow: 2px 2px 20px lightgrey;
   /* max-width: 500px; */
   position: relative;
 }
 
 .card-image {
+
   width: 100%;
+  height: 110%
 }
 
 .card-overlay {
+  cursor: pointer;
   opacity: 0;
-  font-size: 1em;
+  font-size: 2em;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(220, 220, 220, 0);
   transition: .3s ease-in-out;
-  z-index: 4;
+  /* z-index: 4; */
 }
 
-.overlay-heading {
-
-}
+.card-overlay.show {
+  opacity: 1;
+  height: 100%;
+  /* font-size: 2em; */
+  transition: .3s ease-in-out;
+  background-color: rgba(220, 220, 220, .7);
+  }
 
 .port-icon {
   font-size: 1.4em;
@@ -618,14 +636,7 @@ display: none;
   font-size: .5em
 }
 
-.card-overlay.show {
-  opacity: 1;
-  font-size: 2em;
-  opacity: ;
-  transition: .3s ease-in-out;
-  background-color: rgba(255, 255, 255, .6)
-  
-  }
+
   
 /* .card-overlay-cocktail:hover:after {
   content: "COCKTAIL";

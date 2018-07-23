@@ -6,12 +6,6 @@ export function changeUrl(url){
   }
 }
 
-export function changeCss(cssShow){
-  return {
-    type:"SET_CSS",
-    value: cssShow
-  }
-}
 
 // export function changeUrl(url) {
 //   return function () {
