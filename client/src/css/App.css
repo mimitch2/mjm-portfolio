@@ -47,6 +47,7 @@
 .App {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
+  /* font-weight: 400; */
 }
 
 .pre-load-all-hidden {
@@ -584,6 +585,11 @@ display: none;
 }
 
 /************** portfolio **************/
+
+.portfolio-main {
+  
+
+}
 
 .site-cards-main {
   width: 100vw;

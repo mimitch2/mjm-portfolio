@@ -2,21 +2,28 @@ import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
 
-let newTemp ="";
-let clouds = ""
+
 class About extends Component {
 
   constructor(props) {
     super(props)
-    
     this.state = {
       temp: "",
       icon: ""
     }
   }
 
-
     componentDidMount = () => {
+      this.getTemp();
+      // setInterval(() => {
+      //   this.getTemp();
+      // }, 500000)
+    
+    }
+
+    getTemp = () => {
+      console.log("temp");
+      
       fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
         return response.json();
       })
@@ -27,8 +34,10 @@ class About extends Component {
     returnWeatherIcon = () => {
       if (this.state.icon.includes("cloudy")) {
         return <i className="fas fa-cloud"></i>
-      } else if (this.state.icon.includes("clear")) {
+      } else if (this.state.icon.includes("day")) {
         return <i className="fas fa-sun"></i>
+      } else if (this.state.icon.includes("cloudy")){
+        return <i class="fas fa-moon"></i>
       } else if (this.state.icon.includes("rain")) {
         return <i className="fas fa-umbrella"></i>
       } else {
@@ -36,8 +45,6 @@ class About extends Component {
       }
     }
    
-
-
     render(){
       return (
         <div className="about-main comp" id="main">
@@ -47,7 +54,7 @@ class About extends Component {
               <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
             <div className="image-div austin-image-div">
-              <div className="temp-div"> <span>Austin: {this.state.temp}º {this.returnWeatherIcon()}</span> </div>
+              <div className="temp-div"> <span>Austin: {this.state.temp}º &nbsp; {this.returnWeatherIcon()}</span> </div>
             </div>
             <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
             <div className="about-content content-one basic-flex-row">
