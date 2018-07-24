@@ -394,6 +394,15 @@ display: none;
   font-size: 1.4em;
 }
 
+.temp-div {
+  width: 100vw;
+  margin-top: calc(100vh - 150px);
+  margin-left: 22px;
+  font-size: 1.4em;
+  font-weight: 200;
+  color: var(--orange-color)
+}
+
 .chevron-div {
   position: absolute;
   margin-top: calc(100vh - 200px)

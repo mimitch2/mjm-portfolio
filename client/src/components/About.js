@@ -2,27 +2,40 @@ import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
 
-let newTemp =""
-
+let newTemp ="";
+let clouds = ""
 class About extends Component {
 
   constructor(props) {
     super(props)
     
     this.state = {
-      temp: ""
+      temp: "",
+      icon: ""
     }
   }
- 
+
+
     componentDidMount = () => {
       fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
         return response.json();
       })
-        .then(function(myJson) {
-          newTemp = Math.floor(myJson.currently.temperature).toString();
-          console.log(newTemp, myJson.currently.icon);
-        });
+        .then(data => this.setState({temp: Math.floor(data.currently.temperature).toString(), 
+          icon: data.currently.icon}))
     }
+
+    returnWeatherIcon = () => {
+      if (this.state.icon.includes("cloudy")) {
+        return <i className="fas fa-cloud"></i>
+      } else if (this.state.icon.includes("clear")) {
+        return <i className="fas fa-sun"></i>
+      } else if (this.state.icon.includes("rain")) {
+        return <i className="fas fa-umbrella"></i>
+      } else {
+        return null
+      }
+    }
+   
 
 
     render(){
@@ -34,7 +47,7 @@ class About extends Component {
               <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
             <div className="image-div austin-image-div">
-              <div className="temp-div"> <span>Current temperature: {newTemp}º</span> </div>
+              <div className="temp-div"> <span>Austin: {this.state.temp}º {this.returnWeatherIcon()}</span> </div>
             </div>
             <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
             <div className="about-content content-one basic-flex-row">
