@@ -37,11 +37,11 @@ class About extends Component {
         return icons.partlyCloudyDay
       } else if (this.state.icon === "partly-cloudy-night") {
         return icons.partlyCloudyNight
-      }else if (this.state.icon === "clear-night"){
+      }else if (this.state.icon === "clear-night") {
         return icons.moonClear
       } else if (this.state.icon === "clear-day") {
         return icons.sunny
-      } else if (this.state.icon === "cloudy"){
+      } else if (this.state.icon === "cloudy") {
         return icons.cloudy
       } else if (this.state.icon === "rain") {
         return icons.rain
