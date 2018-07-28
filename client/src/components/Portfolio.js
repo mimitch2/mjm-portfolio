@@ -5,13 +5,6 @@ import SiteCard from './SiteCard'
 
 class Portfolio extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state ={
-      // cardCss: "card-div card-div-hidden",
-      cardCss: "card-div"
-    }
-  }
 
   componentDidMount = () => {
     // setTimeout(() => {
@@ -24,7 +17,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="portfolio-main site-cards-main">
-        <div className={this.state.cardCss}>
+        <div className="card-div">
           <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
             info="A React/Redux based app that provides cocktail recipes."
             icons={  
@@ -38,7 +31,8 @@ class Portfolio extends Component {
             url="https://mjm-cocktail-app.herokuapp.com/"/>
 
         </div>
-        <div className={this.state.cardCss}>
+        
+        <div className="card-div">
           <SiteCard image="img/old_portfolio_site.png" id="card-overlay-portfolio" 
             heading="OLD PORTFOLIO"
             info="A basic jQuery/Javascript protfolio site"
@@ -50,7 +44,8 @@ class Portfolio extends Component {
               </div>} 
             url="http://www.mikejmitchell.com/mainPage/sites/Portfolio/index.html"/>
         </div>
-        <div className={this.state.cardCss}>
+
+        <div className="card-div">
           <SiteCard image="img/monster_site.png" id="card-overlay-monster" heading="MONSTER RUN!"
             info="A click based game using Javascript, jQuery, HTML5 & CSS"
             icons={  
@@ -61,6 +56,7 @@ class Portfolio extends Component {
               </div>} 
             url="http://www.mikejmitchell.com/mainPage/sites/monster-run/index.html"/>
         </div>
+
       </div>
     )
   }

@@ -23,8 +23,6 @@ class About extends Component {
     }
 
     getTemp = () => {
-      console.log("temp");
-      
       fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
         return response.json();
       })

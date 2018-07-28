@@ -25,15 +25,17 @@ const SiteCard = (props) => {
     <div className="site-card">
       <div className="card-overlay"  
         onClick={handleClick}>
+
         <div className="overlay-main basic-flex-col">
-          <span className="overlay-heading">
+          <div className="overlay-heading">
             {props.heading}
-          </span>
-          <span className="overlay-info">
+          </div>
+          <div className="overlay-info">
             {props.info}
             {props.icons}
-          </span>
+          </div>
         </div>
+
       </div>
       <img src={props.image} alt="website" className="card-image"/>    
     </div>
