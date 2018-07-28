@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import '../css/App.css'
 import {Link} from "react-router-dom";
 
-const linkNames = ["PORTFOLIO", "DESIGN", "BLOG"]
+const linkNames = ["PORTFOLIO", "BLOG"]
 
 class Nav extends Component{
   state = {
