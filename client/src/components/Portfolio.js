@@ -16,7 +16,7 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div className="portfolio-main site-cards-main">
+      <div className="portfolio-main">
         <div className="card-div">
           <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
             info="A React/Redux based app that provides cocktail recipes."
