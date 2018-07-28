@@ -22,10 +22,8 @@ const SiteCard = (props) => {
   }
   // onMouseOver={addShow} onMouseLeave={removeShow}
   return (
-    <div className="site-card">
-      <div className="card-overlay"  
-        onClick={handleClick}>
-
+    <div className="site-card basic-flex-row" onClick={handleClick}>
+      <div className="card-overlay basic-flex-col"  >
         <div className="overlay-main basic-flex-col">
           <div className="overlay-heading">
             {props.heading}
