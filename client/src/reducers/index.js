@@ -7,6 +7,11 @@ function url(state = "", action) {
   return state;
 }
 
+function blogEntries(state = []) {
+
+  return state;
+}
+
 
 // function favorites(state = [], action) {
 //   if (action.type === "FAVORITES_LOADED") {
@@ -17,7 +22,7 @@ function url(state = "", action) {
 
 
 const rootReducer = combineReducers({
-  url
+  url, blogEntries
 });
 
 export default rootReducer;

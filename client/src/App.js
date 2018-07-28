@@ -6,8 +6,7 @@ import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
 import Loading from './components/Loading'
 import Portfolio from './components/Portfolio'
-// import Design from './components/Design'
-import Blog from './components/Blog'
+import Blog from './containers/BlogContainer'
 import Oops from './components/Oops'
 
 
@@ -43,7 +42,7 @@ class App extends Component {
   //  https://cors-anywhere.herokuapp.com/
 
  getTemp = () => {
-   fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
+   fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
      return response.json();
    })
      .then(data => this.setState({temp: Math.floor(data.currently.temperature).toString() + "º", 
@@ -54,14 +53,16 @@ class App extends Component {
    return (
      <BrowserRouter>
        <div className="App" >
+
          <div className="pre-load-all-hidden">
            <img src="/img/IMG_0326.jpg" alt=""/>
            <img src="/img/old_portfolio_site.png" alt=""/>
            <img src="/img/monster_site.png" alt=""/>
            <img src="/img/cocktail_site.png" alt=""/>
            <img src="/img/web-design-bw.jpg" alt=""/>
-           
+           <img src="/img/DSCF0035.jpg" alt=""/>
          </div>
+
          <header>
            <Header />
          </header>
@@ -70,7 +71,6 @@ class App extends Component {
          <div className={this.state.cssShow}> 
            <Switch>
              <Route exact path="/portfolio" component={Portfolio} />
-             {/* <Route exact path="/design" component={Design} /> */}
              <Route exact path="/blog" component={Blog} />
              <Route  path="/"  render={(props) => <About {...props} temp={this.state.temp} icon={this.state.icon}/>} />
              <Route path="*" component={Oops} />
