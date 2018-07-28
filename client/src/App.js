@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
 import Loading from './components/Loading'
 import Portfolio from './components/Portfolio'
-import Design from './components/Design'
+// import Design from './components/Design'
 import Blog from './components/Blog'
 import Oops from './components/Oops'
 
@@ -64,7 +64,7 @@ class App extends Component {
 
            <Switch>
              <Route exact path="/portfolio" component={Portfolio} />
-             <Route exact path="/design" component={Design} />
+             {/* <Route exact path="/design" component={Design} /> */}
              <Route exact path="/blog" component={Blog} />
              <Route  path="/" component={About} />
              <Route path="*" component={Oops} />

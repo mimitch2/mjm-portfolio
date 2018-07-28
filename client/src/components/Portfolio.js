@@ -25,7 +25,7 @@ class Portfolio extends Component {
     return (
       <div className="portfolio-main site-cards-main">
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/cocktail_site.png" alt="cocktail website" className="cocktail-card-image card-image"/>} heading="COCKTAIL APP"
+          <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
             info="A React/Redux based app that provides cocktail recipes."
             icons={  
               <div className="portfolio-icon-div">
@@ -39,7 +39,7 @@ class Portfolio extends Component {
 
         </div>
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/old_portfolio_site.png" alt="portfolio website" className="portfolio-card-image card-image"/>} id="card-overlay-portfolio" 
+          <SiteCard image="img/old_portfolio_site.png" id="card-overlay-portfolio" 
             heading="OLD PORTFOLIO"
             info="A basic jQuery/Javascript protfolio site"
             icons={  
@@ -51,7 +51,7 @@ class Portfolio extends Component {
             url="http://www.mikejmitchell.com/mainPage/sites/Portfolio/index.html"/>
         </div>
         <div className={this.state.cardCss}>
-          <SiteCard image={<img src="img/monster_site.png" alt="monster website" className="monster-card-image card-image"/>} id="card-overlay-monster" heading="MONSTER RUN!"
+          <SiteCard image="img/monster_site.png" id="card-overlay-monster" heading="MONSTER RUN!"
             info="A click based game using Javascript, jQuery, HTML5 & CSS"
             icons={  
               <div className="monster-icon-div">

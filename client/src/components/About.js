@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
+import icons from './WeatherIcons.js'
 
 
 class About extends Component {
@@ -24,7 +25,7 @@ class About extends Component {
     getTemp = () => {
       console.log("temp");
       
-      fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
+      fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
         return response.json();
       })
         .then(data => this.setState({temp: Math.floor(data.currently.temperature).toString(), 
@@ -32,14 +33,18 @@ class About extends Component {
     }
 
     returnWeatherIcon = () => {
-      if (this.state.icon.includes("cloudy")) {
-        return <i className="fas fa-cloud"></i>
-      } else if (this.state.icon.includes("day")) {
-        return <i className="fas fa-sun"></i>
-      } else if (this.state.icon.includes("cloudy")){
-        return <i class="fas fa-moon"></i>
-      } else if (this.state.icon.includes("rain")) {
-        return <i className="fas fa-umbrella"></i>
+      if (this.state.icon === "partly-cloudy-day") {
+        return icons.partlyCloudyDay
+      } else if (this.state.icon === "partly-cloudy-night") {
+        return icons.partlyCloudyNight
+      }else if (this.state.icon === "clear-night"){
+        return icons.moonClear
+      } else if (this.state.icon === "clear-day") {
+        return icons.sunny
+      } else if (this.state.icon === "cloudy"){
+        return icons.cloudy
+      } else if (this.state.icon === "rain") {
+        return icons.rain
       } else {
         return null
       }
@@ -54,7 +59,9 @@ class About extends Component {
               <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
             <div className="image-div austin-image-div">
-              <div className="temp-div"> <span>Austin: {this.state.temp}º &nbsp; {this.returnWeatherIcon()}</span> </div>
+              <div className="temp-div"> 
+                <span>Austin: {this.state.temp}º</span> &nbsp;&nbsp;<span className="weather-icon">{this.returnWeatherIcon()}</span> 
+              </div>
             </div>
             <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
             <div className="about-content content-one basic-flex-row">
@@ -67,24 +74,10 @@ class About extends Component {
 
                 I specialize in React based  
                   </span>
-                  {/* <div className="skill-icon-div">
-                    <i className="fab skill-icon fa-html5"></i>
-                    <i className="fab skill-icon fa-js-square"></i>
-                    <i className="fab skill-icon fa-css3-alt"></i>
-                    <i className="fab skill-icon fa-node"></i>
-                    <i className="fab skill-icon fa-react"></i>
-                    <i className="fab skill-icon fa-git-square"></i>
-                  </div> */}
                 </div> 
               </div>
             </div>
-
-            {/* <div className="about-content content-two">
-             Scroll Up and Down this page to see the parallax scrolling effect.
-            </div> */}
-
           </div>
-
         </div>
       )
     }
