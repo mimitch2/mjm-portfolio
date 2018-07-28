@@ -40,8 +40,10 @@ class App extends Component {
    
  }
 
+  //  https://cors-anywhere.herokuapp.com/
+
  getTemp = () => {
-   fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
+   fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
      return response.json();
    })
      .then(data => this.setState({temp: Math.floor(data.currently.temperature).toString() + "º", 

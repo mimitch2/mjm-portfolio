@@ -25,11 +25,9 @@ class About extends Component {
       }
     }
    
-    render(){
-      console.log(this.props);
-      
+    render(){      
       return (
-        <div className="about-main comp" id="main">
+        <div className="about-main" id="main">
           <div className="about-wrapper" id="container">
             <div className="intro-text" >  
               <h1 className="hello-text" >HELLO</h1>

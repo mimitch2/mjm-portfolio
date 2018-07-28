@@ -3,6 +3,9 @@ import '../css/App.css'
 import SiteCard from './SiteCard'
 
 
+
+
+
 class Portfolio extends Component {
 
 
@@ -17,6 +20,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="portfolio-main">
+       
         <div className="card-div">
           <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
             info="A React/Redux based app that provides cocktail recipes."
@@ -35,7 +39,7 @@ class Portfolio extends Component {
         <div className="card-div">
           <SiteCard image="img/old_portfolio_site.png" id="card-overlay-portfolio" 
             heading="OLD PORTFOLIO"
-            info="A basic jQuery/Javascript protfolio site"
+            info="A basic jQuery/Javascript portfolio"
             icons={  
               <div className="portfolio-icon-div">
                 <i className="fab port-icon fa-html5"></i>
