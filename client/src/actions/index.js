@@ -7,13 +7,12 @@ export function changeUrl(url){
 }
 
 
-// export function changeUrl(url) {
-//   return function () {
-
-//     state.url = url
-  
-//   };
-// }
+export function addBlog(blogEntries){  
+  return {
+    type:"SET_BLOG",
+    value: blogEntries
+  }
+}
       
 // export function fullDataLoaded(result) {
 //   return {

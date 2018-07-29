@@ -7,8 +7,10 @@ function url(state = "", action) {
   return state;
 }
 
-function blogEntries(state = []) {
-
+function blogEntries(state = [], action) {
+  if (action.type === "SET_BLOG") {
+    return action.value;
+  }
   return state;
 }
 

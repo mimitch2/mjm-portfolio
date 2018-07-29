@@ -1,12 +1,12 @@
 
 import App from "./App";
 import { connect } from "react-redux";
-import { changeUrl } from "./actions";
+import { changeUrl, addBlog } from "./actions";
 
 function mapStateToProps(state) {
   return {
     url: state.url,
-    cssShow: state.cssShow
+    blogEntries: state.blogEntries
   };
 }
   
@@ -16,6 +16,10 @@ function mapDispatchToProps(dispatch) {
       const action = changeUrl(url);
       dispatch(action);
     },
+    setBlog: function (blogEntries) {
+      const action = addBlog(blogEntries);
+      dispatch(action);
+    }
   };
 }
 
