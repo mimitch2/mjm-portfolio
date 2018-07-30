@@ -29,7 +29,10 @@ class Nav extends Component{
  setSelected = () => {
    const path = window.location.pathname
    const checkLink = path.substr(1)
+   
    if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
+     console.log("true");
+     
      document.getElementById(path).className = this.state.selected
      this.props.set(path)
    }
@@ -55,6 +58,16 @@ class Nav extends Component{
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
+
+           {/* <Link to="/portfolio" className={this.state.selected} id="/portfolio" onClick={(e) => this.handleClick(e)}>
+           PORTFOLIO 
+           </Link>
+
+           <Link to="/blog" className={this.state.selected} id="/blog" onClick={(e) => this.handleClick(e)}>
+           BLOG 
+           </Link> */}
+
+
 
            {linkNames.map((name) => <Link key={name} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
              {name} 

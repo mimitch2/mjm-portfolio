@@ -16,10 +16,10 @@ function mapDispatchToProps(dispatch) {
       const action = changeUrl(url);
       dispatch(action);
     },
-    setBlog: function (blogEntries) {
-      const action = addBlog(blogEntries);
-      dispatch(action);
-    }
+    // setBlog: function (blogEntries) {
+    //   const action = addBlog(blogEntries);
+    //   dispatch(action);
+    // }
   };
 }
 

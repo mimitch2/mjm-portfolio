@@ -7,10 +7,10 @@ import About from './components/About'
 import Loading from './components/Loading'
 import Portfolio from './components/Portfolio'
 import Blog from './containers/BlogContainer'
+import BlogEntry from "./components/BlogEntry"
 import Oops from './components/Oops'
-import Butter from 'buttercms';
 
-const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
+
 const history = createHistory()
  
 
@@ -26,12 +26,7 @@ class App extends Component {
 
 
  componentDidMount = () => {
-   butter.post.list({page: 1, page_size: 10}).then(function(response) {
-     
-     return response.data.data
-   }).then(data => {     
-     this.props.setBlog(data)
-   })
+ 
    this.getTemp();
    history.listen((location, action) => {
      // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
@@ -76,10 +71,12 @@ class App extends Component {
          <Loading /> 
 
          <div className={this.state.cssShow}> 
-           <Switch>
+           <Switch {...this.props}>
              <Route exact path="/portfolio" component={Portfolio} />
+             {/* <Route exact path="/blog" component={Blog} /> */}
              <Route exact path="/blog" component={Blog} />
-             <Route  path="/"  render={(props) => <About {...props} temp={this.state.temp} icon={this.state.icon}/>} />
+             <Route path="/post/:slug" component={BlogEntry} />
+             <Route exact path="/"  render={(props) => <About {...props} temp={this.state.temp} icon={this.state.icon}/>} />
              <Route path="*" component={Oops} />
            </Switch>
          </div>  

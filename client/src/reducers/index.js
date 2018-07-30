@@ -7,12 +7,12 @@ function url(state = "", action) {
   return state;
 }
 
-function blogEntries(state = [], action) {
-  if (action.type === "SET_BLOG") {
-    return action.value;
-  }
-  return state;
-}
+// function blogEntries(state = [], action) {
+//   if (action.type === "SET_BLOG") {
+//     return action.value;
+//   }
+//   return state;
+// }
 
 
 // function favorites(state = [], action) {
@@ -24,7 +24,7 @@ function blogEntries(state = [], action) {
 
 
 const rootReducer = combineReducers({
-  url, blogEntries
+  url
 });
 
 export default rootReducer;
