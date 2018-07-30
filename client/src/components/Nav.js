@@ -30,9 +30,7 @@ class Nav extends Component{
    const path = window.location.pathname
    const checkLink = path.substr(1)
    
-   if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {
-     console.log("true");
-     
+   if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {     
      document.getElementById(path).className = this.state.selected
      this.props.set(path)
    }

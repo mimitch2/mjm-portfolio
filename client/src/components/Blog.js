@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import Butter from 'buttercms';
+import Loading from "./Loading"
 import '../css/App.css'
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
@@ -48,9 +49,13 @@ render() {
       <div>
         {this.state.resp.data.map((post) => {
           return (
-            <div key={post.slug}>
-              <Link to={`/post/${post.slug}`}>{post.title}</Link>
-            </div>
+            <Link to={`/post/${post.slug}`} key={post.slug}>
+              <div className="blog-card">
+                <h1 className="blog-link">{post.title}</h1> 
+                <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> <span className="blog-categoris">{post.categories.map((cat, i )=> `${cat.name} • `)}</span>
+                <p className="blog-summary">{post.summary}</p>
+              </div>
+            </Link>
           )
         })}
 
@@ -65,9 +70,7 @@ render() {
     );
   } else {
     return (
-      <div>
-        Loading...
-      </div>
+      <Loading />
     )
   }
 }

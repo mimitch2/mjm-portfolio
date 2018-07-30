@@ -1,12 +1,11 @@
 
 import App from "./App";
 import { connect } from "react-redux";
-import { changeUrl, addBlog } from "./actions";
+import { changeUrl } from "./actions";
 
 function mapStateToProps(state) {
   return {
-    url: state.url,
-    blogEntries: state.blogEntries
+    url: state.url
   };
 }
   
