@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import Header from './components/Header'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, IndexRoute } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
 import Loading from './components/Loading'
@@ -13,7 +13,6 @@ import Butter from 'buttercms';
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
 const history = createHistory()
  
-let frag;
 
 class App extends Component {
   constructor(props) {
@@ -21,8 +20,7 @@ class App extends Component {
     this.state = {
       cssShow: "content hidden",
       temp: "",
-      icon: "",
-      body:""
+      icon: ""
     }
   }
 
@@ -33,8 +31,6 @@ class App extends Component {
      return response.data.data
    }).then(data => {     
      this.props.setBlog(data)
-     this.setState({body: data[0].body})
-     //  console.log(this.state.body, typeof(this.state.body));
    })
    this.getTemp();
    history.listen((location, action) => {
@@ -44,8 +40,6 @@ class App extends Component {
      this.getTemp();
    })
    setTimeout(() => {
-  
-     
      this.setState({ cssShow: "content"})
    }, 2800);
 
@@ -97,3 +91,76 @@ class App extends Component {
 
 export default App;
 
+// import React, { Component } from 'react';
+// import { Link } from 'react-router-dom'
+// import Butter from 'buttercms'
+
+// const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
+
+// class BlogHome extends Component {
+
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       loaded: false
+//     };
+//   }
+
+//   fetchPosts(page) {
+//     butter.post.list({page: page, page_size: 10}).then((resp) => {
+//       this.setState({
+//         loaded: true,
+//         resp: resp.data
+//       })
+//     });
+//   }
+
+//   componentWillMount() {
+//     let page = this.props.params.page || 1;
+
+//     this.fetchPosts(page)
+//   }
+
+//   componentWillReceiveProps(nextProps) {
+//     this.setState({loaded: false});
+
+//     let page = nextProps.params.page || 1;
+
+//     this.fetchPosts(page)
+//   }
+
+//   render() {
+//     if (this.state.loaded) {
+//       const { next_page, previous_page } = this.state.resp.meta;
+
+//       return (
+//         <div>
+//           {this.state.resp.data.map((post) => {
+//             return (
+//               <div key={post.slug}>
+//                 <Link to={`/post/${post.slug}`}>{post.title}</Link>
+//               </div>
+//             )
+//           })}
+
+//           <br />
+
+//           <div>
+//             {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+
+//             {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
+//           </div>
+//         </div>
+//       );
+//     } else {
+//       return (
+//         <div>
+//           Loading...
+//         </div>
+//       )
+//     }
+//   }
+// }
+
+// export default BlogHome;

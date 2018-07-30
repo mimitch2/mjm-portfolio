@@ -6,7 +6,7 @@ const BlogEntry = (props) => {
 
 
   if(props.entry){
-    console.log(props.entry);
+    // console.log(props.entry);
     
     return (
       <div className="blog-main">
@@ -16,6 +16,7 @@ const BlogEntry = (props) => {
           <h2 className="blog-heading">
             {props.entry.title}
           </h2>
+          <h6 className="author">{props.entry.author.first_name} {props.entry.author.last_name}</h6>
           <h4 className="blog-heading">
             {props.entry.subHeading}
           </h4>
@@ -24,7 +25,7 @@ const BlogEntry = (props) => {
       </div>
     )
   }else {
-    <div>Hold on...</div>
+    return <div>Hold on...</div>
   }
 }
 
