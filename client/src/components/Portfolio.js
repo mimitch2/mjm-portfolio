@@ -46,7 +46,7 @@ class Portfolio extends Component {
                 <i className="fab port-icon fa-js-square"></i>
                 <i className="fab port-icon fa-css3-alt"></i>
               </div>} 
-            url="http://www.mikejmitchell.com/mainPage/sites/Portfolio/index.html"/>
+            url="https://mimitch2.github.io/mainPage/sites/Portfolio/index.html"/>
         </div>
 
         <div className="card-div">
@@ -58,7 +58,7 @@ class Portfolio extends Component {
                 <i className="fab port-icon fa-js-square"></i>
                 <i className="fab port-icon fa-css3-alt"></i>
               </div>} 
-            url="http://www.mikejmitchell.com/mainPage/sites/monster-run/index.html"/>
+            url="https://mimitch2.github.io/mainPage/sites/monster-run/index.html"/>
         </div>
 
       </div>

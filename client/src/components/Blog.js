@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import Butter from 'buttercms';
 import Loading from "./Loading"
+import Footer from './Footer'
 import '../css/App.css'
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
@@ -20,25 +21,23 @@ class Blog extends Component {
       this.setState({
         loaded: true,
         resp: resp.data
-      })
-      console.log(this.state.resp);
-      
+      })    
+      console.log(this.state.resp);  
     });
+    
+    
+  }
+
+  returnBullet = (i, length) => {
+    if(i < length){
+      return " • "
+    }
+    return ""
   }
 
 componentDidMount = () => {
-
-  console.log(this.props);
-  
   const page = this.props.match.params.page || 1;
-
   this.fetchPosts(page)
-
-  // butter.post.list({page: 1, page_size: 10}).then(function(response) {
-  //   return response.data.data
-  // }).then(data => {     
-  //   // this.props.setBlog(data)
-  // })
 }
 
 render() {
@@ -47,15 +46,19 @@ render() {
 
     return (
       <div>
+        <h1 className="blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
         {this.state.resp.data.map((post) => {
           return (
             <Link to={`/post/${post.slug}`} key={post.slug}>
               <div className="blog-card">
-                <h1 className="blog-link">{post.title}</h1> 
-                <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> <span className="blog-categoris">{post.categories.map((cat, i )=> `${cat.name} • `)}</span>
+                <h1 className="blog-link">{post.title}</h1><img src={post.featured_image} alt="" className="blog-featured-image"/>
+                <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> 
+                <span className="blog-categories">{post.categories.map((cat, i )=> {
+                  return cat.name + this.returnBullet(i, post.categories.length -1)})}</span>
                 <p className="blog-summary">{post.summary}</p>
               </div>
             </Link>
+            
           )
         })}
 
@@ -66,6 +69,7 @@ render() {
 
           {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
         </div>
+        {/* <Footer /> */}
       </div>
     );
   } else {

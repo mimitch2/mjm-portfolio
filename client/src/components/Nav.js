@@ -30,10 +30,12 @@ class Nav extends Component{
    const path = window.location.pathname
    const checkLink = path.substr(1)
    
-   if (linkNames.includes(checkLink.toUpperCase()) || path === "/") {     
+   if (linkNames.includes(checkLink.toUpperCase()) || path === "/") { 
      document.getElementById(path).className = this.state.selected
-     this.props.set(path)
+   }else if (path.includes("post")){
+     document.getElementById("/blog").className = this.state.selected
    }
+   this.props.set(path)
  }
 
  setUnselected = () => {
@@ -57,19 +59,19 @@ class Nav extends Component{
            ABOUT 
            </Link>
 
-           {/* <Link to="/portfolio" className={this.state.selected} id="/portfolio" onClick={(e) => this.handleClick(e)}>
+           <Link to="/portfolio" className={this.state.selected} id="/portfolio" onClick={(e) => this.handleClick(e)}>
            PORTFOLIO 
            </Link>
 
            <Link to="/blog" className={this.state.selected} id="/blog" onClick={(e) => this.handleClick(e)}>
            BLOG 
-           </Link> */}
+           </Link>
 
 
 
-           {linkNames.map((name) => <Link key={name} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}>
-             {name} 
-           </Link>)}
+           {/* {linkNames.map((name) => <Link key={name} to={`/${name.toLowerCase()}`} className={this.state.unselected} id={`/${name.toLowerCase()}`} onClick={(e) => this.handleClick(e)}> */}
+           {/* {name}  */}
+           {/* </Link>)} */}
 
          </ul>
        </nav>
