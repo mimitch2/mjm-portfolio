@@ -57,6 +57,7 @@ class App extends Component {
    return (
      <BrowserRouter>
        <div className="App" >
+   
          <div className="pre-load-all-hidden">
            <img src="/img/IMG_0326.jpg" alt=""/>
            <img src="/img/old_portfolio_site.png" alt=""/>
@@ -81,7 +82,8 @@ class App extends Component {
              <Route path="*" component={Oops} />
            </Switch>
          </div>  
-         <Footer />
+   
+         <Footer credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/>
        </div>
      </BrowserRouter>
    );

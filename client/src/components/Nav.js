@@ -58,7 +58,7 @@ class Nav extends Component{
            <Link to="/" className={this.state.selected} id="/" onClick={(e) => this.handleClick(e)}>
            ABOUT 
            </Link>
-
+           
            <Link to="/portfolio" className={this.state.selected} id="/portfolio" onClick={(e) => this.handleClick(e)}>
            PORTFOLIO 
            </Link>

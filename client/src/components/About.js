@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
-import icons from './WeatherIcons.js'
+import icons from './svgIcons.js'
 
 
 class About extends Component {
@@ -25,7 +25,7 @@ class About extends Component {
       }
     }
    
-    render(){      
+    render(){            
       return (
         <div className="about-main" id="main">
           <div className="about-wrapper" id="container">
@@ -44,9 +44,11 @@ class About extends Component {
                 <div className ="content-text-inner">
                   <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
                   <div className="bio-main">
-                I spent nearly 20 years at Apple as a software qa engineer and manager. What I learned was that while anything is possible, what's right for the user is what matters most. This ethos is embedded in my mind, and it's my guiding principle when designing and implementing web applications. 
+                    <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and implementing web applications. Intuitive, effortless user experiences should obfuscate the underlying technology. </p>
+               
+                    <p className="about-me-text">I specialize in React SPA's and am experrieced in full MERN stack.  I am obsessed with </p>
 
-                I specialize in React based  
+                
                   </div>
                 </div> 
               </div>

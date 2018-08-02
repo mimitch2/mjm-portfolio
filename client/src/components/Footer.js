@@ -2,12 +2,11 @@ import React from 'react'
 import '../css/App.css'
 
 
-const Footer = (props) => {
+const Footer = (props) => {  
   return (
     <div className="footer-main">
-      <span className="footer-credits">Powered by: </span>
-      <span className="footer-copywrite">Design and code - Mike Mitchell - 2018</span>
-      
+      <span className="footer-credits footer-item">{props.credits}</span>
+      <span className="footer-copywrite footer-item">{props.copyWrite}</span>
     </div>
   )
 }
