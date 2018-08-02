@@ -5,8 +5,7 @@ import { changeUrl } from "./actions";
 
 function mapStateToProps(state) {
   return {
-    url: state.url,
-    cssShow: state.cssShow
+    url: state.url
   };
 }
   
@@ -16,6 +15,10 @@ function mapDispatchToProps(dispatch) {
       const action = changeUrl(url);
       dispatch(action);
     },
+    // setBlog: function (blogEntries) {
+    //   const action = addBlog(blogEntries);
+    //   dispatch(action);
+    // }
   };
 }
 

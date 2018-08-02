@@ -1,56 +1,33 @@
 import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
-import icons from './WeatherIcons.js'
+import icons from './svgIcons.js'
 
 
 class About extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      temp: "",
-      icon: ""
-    }
-  }
-
-    componentDidMount = () => {
-      this.getTemp();
-      // setInterval(() => {
-      //   this.getTemp();
-      // }, 500000)
-    
-    }
-
-    getTemp = () => {
-      fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431').then(function(response) {
-        return response.json();
-      })
-        .then(data => this.setState({temp: Math.floor(data.currently.temperature).toString(), 
-          icon: data.currently.icon}))
-    }
 
     returnWeatherIcon = () => {
-      if (this.state.icon === "partly-cloudy-day") {
+      if (this.props.icon === "partly-cloudy-day") {
         return icons.partlyCloudyDay
-      } else if (this.state.icon === "partly-cloudy-night") {
+      } else if (this.props.icon === "partly-cloudy-night") {
         return icons.partlyCloudyNight
-      }else if (this.state.icon === "clear-night") {
+      }else if (this.props.icon === "clear-night") {
         return icons.moonClear
-      } else if (this.state.icon === "clear-day") {
+      } else if (this.props.icon === "clear-day") {
         return icons.sunny
-      } else if (this.state.icon === "cloudy") {
+      } else if (this.props.icon === "cloudy") {
         return icons.cloudy
-      } else if (this.state.icon === "rain") {
+      } else if (this.props.icon === "rain") {
         return icons.rain
       } else {
         return null
       }
     }
    
-    render(){
+    render(){            
       return (
-        <div className="about-main comp" id="main">
+        <div className="about-main" id="main">
           <div className="about-wrapper" id="container">
             <div className="intro-text" >  
               <h1 className="hello-text" >HELLO</h1>
@@ -58,20 +35,21 @@ class About extends Component {
             </div>
             <div className="image-div austin-image-div">
               <div className="temp-div"> 
-                <span>Austin: {this.state.temp}º</span> &nbsp;&nbsp;<span className="weather-icon">{this.returnWeatherIcon()}</span> 
+                <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
               </div>
             </div>
             <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
             <div className="about-content content-one basic-flex-row">
               <div className ="content-text basic-flex-row">
                 <div className ="content-text-inner">
-                  {/* <h2 className="bio-quote"></h2> */}
                   <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
-                  <span className="bio-main">
-                I spent nearly 20 years at Apple as a software qa engineer and manager. What I learned was that while anything is possible, what's right for the user is what matters most. This ethos is embedded in my mind, and it's my guiding principle when designing and implementing web applications. 
+                  <div className="bio-main">
+                    <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and implementing web applications. Intuitive, effortless user experiences should obfuscate the underlying technology. </p>
+               
+                    <p className="about-me-text">I specialize in React SPA's and am experrieced in full MERN stack.  I am obsessed with </p>
 
-                I specialize in React based  
-                  </span>
+                
+                  </div>
                 </div> 
               </div>
             </div>

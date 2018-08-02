@@ -3,6 +3,9 @@ import '../css/App.css'
 import SiteCard from './SiteCard'
 
 
+
+
+
 class Portfolio extends Component {
 
 
@@ -16,7 +19,8 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div className="portfolio-main site-cards-main">
+      <div className="portfolio-main">
+       
         <div className="card-div">
           <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
             info="A React/Redux based app that provides cocktail recipes."
@@ -35,14 +39,14 @@ class Portfolio extends Component {
         <div className="card-div">
           <SiteCard image="img/old_portfolio_site.png" id="card-overlay-portfolio" 
             heading="OLD PORTFOLIO"
-            info="A basic jQuery/Javascript protfolio site"
+            info="A basic jQuery/Javascript portfolio"
             icons={  
               <div className="portfolio-icon-div">
                 <i className="fab port-icon fa-html5"></i>
                 <i className="fab port-icon fa-js-square"></i>
                 <i className="fab port-icon fa-css3-alt"></i>
               </div>} 
-            url="http://www.mikejmitchell.com/mainPage/sites/Portfolio/index.html"/>
+            url="https://mimitch2.github.io/mainPage/sites/Portfolio/index.html"/>
         </div>
 
         <div className="card-div">
@@ -54,7 +58,7 @@ class Portfolio extends Component {
                 <i className="fab port-icon fa-js-square"></i>
                 <i className="fab port-icon fa-css3-alt"></i>
               </div>} 
-            url="http://www.mikejmitchell.com/mainPage/sites/monster-run/index.html"/>
+            url="https://mimitch2.github.io/mainPage/sites/monster-run/index.html"/>
         </div>
 
       </div>
