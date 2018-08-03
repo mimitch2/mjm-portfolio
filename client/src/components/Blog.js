@@ -76,7 +76,7 @@ render() {
     );
   } else {
     return (
-      <Loading />
+      <div />
     )
   }
 }
