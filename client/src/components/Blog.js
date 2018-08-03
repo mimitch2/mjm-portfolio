@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import Butter from 'buttercms';
-import Loading from "./Loading"
 import '../css/App.css'
+// import Footer from './Footer'
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
 
@@ -45,6 +45,8 @@ render() {
 
     return (
       <div className="blog-main-page basic-flex-col">
+
+      
         {/* <div className="blog-title-container"> */}
         <h1 className="blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
         {/* </div> */}
@@ -71,7 +73,7 @@ render() {
 
           {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
         </div>
-        {/* <Footer /> */}
+        {/* <Footer id ={"blog-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
       </div>
     );
   } else {

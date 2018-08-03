@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
-import Loading from "./Loading"
 import '../css/App.css'
+// import Footer from './Footer'
 // import Disqus from 'disqus-react';
 
 
@@ -51,12 +51,12 @@ class BlogPost extends Component {
           <h1 className="blog-entry-title"><i className="fal fa-chevron-left" onClick={this.handleClick}></i> &nbsp;&nbsp;{post.title}</h1>
         
           <div dangerouslySetInnerHTML={{__html: post.body}} className="blog-entry-body"/>
-          
+          {/* <Footer id ={"blog-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
         </div>
       );
     } else {
       return (
-        <Loading />
+        <div />
       );
     }
   }

@@ -8,8 +8,8 @@ import Loading from './components/Loading'
 import Portfolio from './components/Portfolio'
 import Blog from './containers/BlogContainer'
 import BlogEntry from "./components/BlogEntry"
-import Footer from './components/Footer'
 import Oops from './components/Oops'
+import Footer from './components/Footer'
 
 
 const history = createHistory()
@@ -82,9 +82,10 @@ class App extends Component {
              <Route path="*" component={Oops} />
            </Switch>
          </div>  
-   
-         <Footer credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/>
+      
+         
        </div>
+       
      </BrowserRouter>
    );
  }
