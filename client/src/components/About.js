@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 // import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
 import icons from './svgIcons.js'
+// import Footer from './Footer'
+
 
 
 class About extends Component {
@@ -43,17 +45,22 @@ class About extends Component {
               <div className ="content-text basic-flex-row">
                 <div className ="content-text-inner">
                   <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
-                  <div className="bio-main">
-                    <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and implementing web applications. Intuitive, effortless user experiences should obfuscate the underlying technology. </p>
-               
-                    <p className="about-me-text">I specialize in React SPA's and am experrieced in full MERN stack.  I am obsessed with </p>
+                  <h2 className="bio-quote">"I beleive that intuitive, effortless user experiences should obfuscate the underlying technology."</h2>
+                 
 
-                
+                  <div className="bio-main">
+                    <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. I beleive that intuitive, effortless user experiences should obfuscate the underlying technology. I make apps to impress people, not developers. </p>
+               
+                    <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications. 
+                      <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> Email </a>me to discuss your project!</p>
                   </div>
+
                 </div> 
               </div>
+              {/* <Footer id={"about-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
             </div>
           </div>
+        
         </div>
       )
     }
