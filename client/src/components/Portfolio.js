@@ -4,18 +4,13 @@ import SiteCard from './SiteCard'
 // import Footer from './Footer'
 
 
-
-
 class Portfolio extends Component {
-
 
   componentDidMount = () => {
     // setTimeout(() => {
     //   this.setState({cardCss: "card-div"})
-    // }, 900);
-    
+    // }, 900);  
   }
-
 
   render() {
     return (

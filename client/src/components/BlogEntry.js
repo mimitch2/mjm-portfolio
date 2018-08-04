@@ -20,15 +20,14 @@ class BlogPost extends Component {
 
 
 
-  componentWillMount() {
-    let slug = this.props.match.params.slug;
-
-    butter.post.retrieve(slug).then((resp) => {
-      this.setState({
-        loaded: true,
-        post: resp.data.data
-      })
-    });
+  async componentWillMount() {
+    const slug = this.props.match.params.slug;
+    const response = await butter.post.retrieve(slug)
+    const json = await response
+    this.setState({
+      loaded: true,
+      post: json.data.data
+    })
   }
 
   handleClick = () => {
