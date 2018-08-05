@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
 import '../css/App.css'
-// import Footer from './Footer'
+import Footer from './Footer'
 // import Disqus from 'disqus-react';
 
 
@@ -18,16 +18,19 @@ class BlogPost extends Component {
     };
   }
 
-
-
   async componentWillMount() {
-    const slug = this.props.match.params.slug;
-    const response = await butter.post.retrieve(slug)
-    const json = await response
-    this.setState({
-      loaded: true,
-      post: json.data.data
-    })
+    try {
+      const slug = this.props.match.params.slug;
+      const response = await butter.post.retrieve(slug)
+      const json = await response
+      this.setState({
+        loaded: true,
+        post: json.data.data
+      })
+    } catch (error) {
+      console.log(error);
+    
+    }
   }
 
   handleClick = () => {
@@ -50,7 +53,12 @@ class BlogPost extends Component {
           <h1 className="blog-entry-title"><i className="fal fa-chevron-left" onClick={this.handleClick}></i> &nbsp;&nbsp;{post.title}</h1>
         
           <div dangerouslySetInnerHTML={{__html: post.body}} className="blog-entry-body"/>
-          {/* <Footer id ={"blog-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
+
+          <Footer credits="Powered by:   " icon={<i className="fab footer-icon fa-react"></i>} 
+            plus={<i className="fal fa-plus" style={{fontSize: ".9em"}}></i>}
+            butter={<a href="https://buttercms.com/" className="butter-link" target="_blank" rel='noopener noreferrer'><img src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png" alt="butter cms" className="butter-logo"/></a>} 
+            copyWrite="© 2018 Mike J Mitchell"/>
+
         </div>
       );
     } else {

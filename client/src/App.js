@@ -48,10 +48,14 @@ class App extends Component {
   //  https://cors-anywhere.herokuapp.com/
 
  async getTemp () {
-   const response = await fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431')
-   const json = await response.json()
-   this.setState({temp: Math.floor(json.currently.temperature).toString() + "º", 
-     icon: json.currently.icon})
+   try {
+     const response = await fetch('https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431')
+     const json = await response.json()
+     this.setState({temp: Math.floor(json.currently.temperature).toString() + "º", 
+       icon: json.currently.icon})
+   } catch (error) {
+     console.log(error);
+   }
  }
 
  render = () => {

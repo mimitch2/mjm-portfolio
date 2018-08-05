@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../css/App.css'
 import SiteCard from './SiteCard'
-// import Footer from './Footer'
+import Footer from './Footer'
 
 
 class Portfolio extends Component {
@@ -15,8 +15,9 @@ class Portfolio extends Component {
   render() {
     return (
       <div>
+        <h1 className="portfolio-blog-page-title">Projects</h1>
         <div className="portfolio-main">
-       
+         
           <div className="card-div">
             <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
               info="A React/Redux based app that provides cocktail recipes."
@@ -58,7 +59,7 @@ class Portfolio extends Component {
           </div>
          
         </div>
-        {/* <Footer id={"portfolio-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
+        <Footer credits="Powered by:   "  copyWrite="© 2018 Mike J Mitchell"/>
       </div>
     )
   }

@@ -7,6 +7,8 @@
   --headertext-color: black;
   --orange-color: #DC5620;
   --teal-color: #20c0dc;
+  --react-color: #00d8ff;
+  --butter-color: #ffc825;
   --calcHeight-meas: calc(100vh - 141px);
 }
 
@@ -540,7 +542,7 @@ display: none;
 
 .bio-quote {
   font-style: italic;
-  font-size: 1.6em;
+  font-size: 2.3vw;
   color: rgb(100, 100, 100);
   display: flex;
   justify-content: center;
@@ -549,7 +551,7 @@ display: none;
   margin: 0px 30px 0px 30px;
   grid-column-start: 2;
   font-weight: 200;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   
 }
 
@@ -639,10 +641,9 @@ display: grid;
 /************** Blog ********************************/
 
 .blog-main-page {
-  /* padding: 0px 80px 0px 80px; */
-  /* display: flex;
-  background-color: pink;
-  align-items: flex-start; */
+  /* background-color: lightblue; */
+ /* height: var(--calcHeight-meas); */
+ /* height: 100vh */
 }
 
 .blog-post-main {
@@ -651,18 +652,20 @@ display: grid;
   margin-top: 20px;
 }
 
-.blog-page-title {
+.portfolio-blog-page-title {
   width: 80vw;
   background-color: var(--orange-color);
   color: white;
   font-size: 4vw;
   font-weight: 300;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .blog-card {
   font-weight: 300;
   width: 80vw;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--orange-color);
 }
 
@@ -700,6 +703,10 @@ a:visited {
   color: var(--orange-color);
 }
 
+.blog-summary {
+
+}
+
 /* .post-container {
   h1, h2, h3, h4, h5 {
     font-weight: 600;
@@ -711,12 +718,11 @@ a:visited {
 
   p {
     /* font-family: Georgia, Cambria, "Times New Roman", Times, serif; */
-    
     font-size: 1.25em;
     line-height: 1.58;
-    margin-bottom: 1.25em;
+    /* margin-bottom: 1.25em; */
     font-weight: 200;
-    letter-spacing: -.003em;
+    /* letter-spacing: -.003em; */
   }
 
   /* Responsive floating */
@@ -749,7 +755,7 @@ a:visited {
     /* border-radius: 4px; */
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   }
-
+/* 
   pre {
     display: block;
     padding: 1em;
@@ -761,47 +767,53 @@ a:visited {
     color: #333333;
     background-color: #f5f5f5;
     font-family: Menlo, Monaco,Consolas, "Courier New", monospace;
-  }
+  } */
 
 
 
 /************** footer **************/
 
 .footer-main {
-  position: absolute;
+  padding: 15px 0px 20px 0px;
+  font-size: 1em;
+  /* padding: 0px 10px 0px 10px; */
+  /* position: absolute; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   /* z-index: 100; */
-  bottom: 0;
-  color: var(--orange-color);
-  left:0;
+  /* bottom: 0; */
+  /* color: var(--orange-color); */
+  /* left:0; */
   height: 50px;
   /* background-color: var(--header-color); */
 }
 
-
-#about-footer {
-  transform: translateY(430px);
+.butter-logo {
+  height: 30px;
+  /* background-color: var(--butter-color);
+  border-radius: 3px; */
 }
 
-#portfolio-footer {
-  /* width: 30vw; */
-  /* margin-left: -400px */
+.react-logo {
+  height: 30px;
+  transform: translateY(-2px);
+}
+
+.footer-icon {
+  font-size: 1.6em;
+  color: var(--react-color);
 }
 
 .footer-item {
   text-transform: uppercase;
-  padding: 20px 20px 20px 20px;
 }
-
 
 
 /************** media queries **************/
 
 
-/* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
@@ -809,6 +821,11 @@ a:visited {
 @media (min-width: 1281px) {
   .portfolio-main {
     grid-template-columns: repeat(2, minmax(400px, .7fr));
+  }
+
+  .portfolio-blog-page-title {
+    font-size: 3.3em;
+
   }
   
 }
