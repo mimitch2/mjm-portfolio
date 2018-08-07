@@ -1,30 +1,40 @@
 import React, { Component } from 'react'
 import '../css/App.css'
 import SiteCard from './SiteCard'
-// import Footer from './Footer'
-
-
+import Footer from './Footer'
 
 
 class Portfolio extends Component {
 
-
   componentDidMount = () => {
     // setTimeout(() => {
     //   this.setState({cardCss: "card-div"})
-    // }, 900);
-    
+    // }, 900);  
   }
-
 
   render() {
     return (
       <div>
+        <h1 className="portfolio-blog-page-title">Projects</h1>
         <div className="portfolio-main">
-       
+
+          <div className="card-div">
+            <SiteCard image="img/photo_site.png" heading="PHOTO SITE"
+              info="A React/MongoDB personal photo gallery."
+              icons={  
+                <div className="photo-icon-div">
+                  <i className="fab port-icon fa-react"></i>
+                  <i className="fab port-icon fa-html5"></i>
+                  <i className="fab port-icon fa-js-square"></i>
+                  <i className="fab port-icon fa-css3-alt"></i>
+                  <i className="fab port-icon fa-node"></i>
+                </div>} 
+              url="http://mikejmitchellphotography.com/"/>
+          </div>
+         
           <div className="card-div">
             <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
-              info="A React/Redux based app that provides cocktail recipes."
+              info="A React/Redux/MongoDB app that provides cocktail recipes."
               icons={  
                 <div className="portfolio-icon-div">
                   <i className="fab port-icon fa-react"></i>
@@ -34,7 +44,6 @@ class Portfolio extends Component {
                   <i className="fab port-icon fa-node"></i>
                 </div>} 
               url="https://mjm-cocktail-app.herokuapp.com/"/>
-
           </div>
         
           <div className="card-div">
@@ -63,7 +72,7 @@ class Portfolio extends Component {
           </div>
          
         </div>
-        {/* <Footer id={"portfolio-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
+        <Footer credits="Powered by:   "  copyWrite="© 2018 Mike J Mitchell"/>
       </div>
     )
   }

@@ -5,9 +5,7 @@ import icons from './svgIcons.js'
 // import Footer from './Footer'
 
 
-
 class About extends Component {
-
 
     returnWeatherIcon = () => {
       if (this.props.icon === "partly-cloudy-day") {
@@ -31,18 +29,23 @@ class About extends Component {
       return (
         <div className="about-main" id="main">
           <div className="about-wrapper" id="container">
+          
             <div className="intro-text" >  
               <h1 className="hello-text" >HELLO</h1>
               <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
+
             <div className="image-div austin-image-div">
               <div className="temp-div"> 
                 <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
               </div>
             </div>
+
             <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
+
             <div className="about-content content-one basic-flex-row">
               <div className ="content-text basic-flex-row">
+
                 <div className ="content-text-inner">
                   <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
                   <h2 className="bio-quote">"I beleive that intuitive, effortless user experiences should obfuscate the underlying technology."</h2>
@@ -56,9 +59,11 @@ class About extends Component {
                   </div>
 
                 </div> 
+               
               </div>
-              {/* <Footer id={"about-footer"} credits={`Powered by: `} copyWrite={`Designed and built by Mike Mitchell - © 2018`}/> */}
+                   
             </div>
+            
           </div>
         
         </div>
