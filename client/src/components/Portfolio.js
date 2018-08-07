@@ -17,10 +17,24 @@ class Portfolio extends Component {
       <div>
         <h1 className="portfolio-blog-page-title">Projects</h1>
         <div className="portfolio-main">
+
+          <div className="card-div">
+            <SiteCard image="img/photo_site.png" heading="PHOTO SITE"
+              info="A React/MongoDB personal photo gallery."
+              icons={  
+                <div className="photo-icon-div">
+                  <i className="fab port-icon fa-react"></i>
+                  <i className="fab port-icon fa-html5"></i>
+                  <i className="fab port-icon fa-js-square"></i>
+                  <i className="fab port-icon fa-css3-alt"></i>
+                  <i className="fab port-icon fa-node"></i>
+                </div>} 
+              url="http://mikejmitchellphotography.com/"/>
+          </div>
          
           <div className="card-div">
             <SiteCard image="img/cocktail_site.png" heading="COCKTAIL APP"
-              info="A React/Redux based app that provides cocktail recipes."
+              info="A React/Redux/MongoDB app that provides cocktail recipes."
               icons={  
                 <div className="portfolio-icon-div">
                   <i className="fab port-icon fa-react"></i>
@@ -30,7 +44,6 @@ class Portfolio extends Component {
                   <i className="fab port-icon fa-node"></i>
                 </div>} 
               url="https://mjm-cocktail-app.herokuapp.com/"/>
-
           </div>
         
           <div className="card-div">

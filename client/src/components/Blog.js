@@ -5,7 +5,6 @@ import '../css/App.css'
 import Footer from './Footer'
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
-
 const cat = null; //for future category filtering
 
 class Blog extends Component {
@@ -27,8 +26,8 @@ class Blog extends Component {
       }) 
     } catch (error) {
       console.log(error);
-    
-    }   
+    }  
+
     butter.category.retrieve('test')
       .then(function(resp) {
         console.log(resp.data)
