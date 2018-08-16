@@ -28,13 +28,13 @@ class Blog extends Component {
       console.log(error);
     }  
 
-    butter.category.retrieve('test')
-      .then(function(resp) {
-        console.log(resp.data)
-      }).catch(function(resp) {
-        console.log(resp)
-      });
-    console.log(this.state.resp);  
+    // butter.category.retrieve('test')
+    //   .then(function(resp) {
+    //     console.log(resp.data)
+    //   }).catch(function(resp) {
+    //     console.log(resp)
+    //   });
+    // console.log(this.state.resp);  
   }
 
   returnBullet = (i, length) => {
