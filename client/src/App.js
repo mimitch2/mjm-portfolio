@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
 import Loading from './components/Loading'
 import Portfolio from './components/Portfolio'
-import Blog from './containers/BlogContainer'
+import Blog from './components/Blog'
 import BlogEntry from "./components/BlogEntry"
 import Oops from './components/Oops'
 // import Footer from './components/Footer'

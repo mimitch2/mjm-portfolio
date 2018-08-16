@@ -20,16 +20,16 @@ class Portfolio extends Component {
 
           <div className="card-div">
             <SiteCard image="img/photo_site.png" heading="PHOTO SITE"
-              info="A React/MongoDB personal photo gallery."
+              info="A React personal photo gallery."
               icons={  
                 <div className="photo-icon-div">
                   <i className="fab port-icon fa-react"></i>
                   <i className="fab port-icon fa-html5"></i>
                   <i className="fab port-icon fa-js-square"></i>
                   <i className="fab port-icon fa-css3-alt"></i>
-                  <i className="fab port-icon fa-node"></i>
+                  {/* <i className="fab port-icon fa-node"></i> */}
                 </div>} 
-              url="http://mikejmitchellphotography.com/"/>
+              url="http://www.mikejmitchellphotography.com/"/>
           </div>
          
           <div className="card-div">

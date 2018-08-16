@@ -3,16 +3,12 @@ import Butter from 'buttercms'
 import { Helmet } from "react-helmet";
 import '../css/App.css'
 import Footer from './Footer'
-// import Disqus from 'disqus-react';
-
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
 
 class BlogPost extends Component {
-
   constructor(props) {
     super(props);
-
     this.state = {
       loaded: false
     };
@@ -29,7 +25,6 @@ class BlogPost extends Component {
       })
     } catch (error) {
       console.log(error);
-    
     }
   }
 
