@@ -14,7 +14,7 @@ class BlogPost extends Component {
     };
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     try {
       const slug = this.props.match.params.slug;
       const response = await butter.post.retrieve(slug)
