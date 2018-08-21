@@ -73,9 +73,9 @@ class App extends Component {
            <img src="https://www.telerik.com/clientsfiles/244515_ie-double-scrollbar.jpg?sfvrsn=d930d843_0" alt=""/>
          </div>
 
-         <header>
+         {/* <header>
            <Header />
-         </header>
+         </header> */}
          <Loading /> 
 
          <div className={this.state.cssShow}> 

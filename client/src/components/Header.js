@@ -8,11 +8,11 @@ import Nav from '../containers/NavContainer';
 const Header = () => {
 
   return (
-    <div className="header-main">
+    <header className="header-main">
       <Logo />
       <Nav />
       <Links />
-    </div>
+    </header>
   )
 }
 

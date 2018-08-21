@@ -27,6 +27,9 @@ class Blog extends Component {
     } catch (error) {
       console.log(error);
     }  
+
+
+    
     // console.log(this.state.resp);
 
     // butter.content.retrieve(['pics'])
@@ -55,6 +58,9 @@ class Blog extends Component {
   componentDidMount = () => {
     const page = this.props.match.params.page || 1;
     this.fetchPosts(page)
+    setInterval(() => {
+      this.fetchPosts(page)
+    }, 500000)
   }
 
   render() {

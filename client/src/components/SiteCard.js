@@ -3,10 +3,10 @@ import '../css/App.css'
 
 const SiteCard = (props) => {
   
-  const handleClick = (e) => {
+  const handleClick = () => {
     window.open(props.url)
   }
-  
+
   return (
     <div className="site-card">
     
