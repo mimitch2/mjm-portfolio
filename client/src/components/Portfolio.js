@@ -7,9 +7,7 @@ import Header from './Header'
 class Portfolio extends Component {
 
   componentDidMount = () => {
-    // setTimeout(() => {
-    //   this.setState({cardCss: "card-div"})
-    // }, 900);  
+    window.scrollTo(0, 0); 
   }
 
   render() {

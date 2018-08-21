@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import Butter from 'buttercms';
 import '../css/App.css'
 import Header from './Header'
-import Loading from './Loading'
 import Footer from './Footer'
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');

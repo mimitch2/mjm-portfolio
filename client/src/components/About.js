@@ -55,7 +55,7 @@ class About extends Component {
                 <div className="bio-main">
                   <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. I beleive that intuitive, effortless user experiences should obfuscate the underlying technology. I make apps to impress people, not developers. </p>
                
-                  <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications. 
+                  <p className="bio-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications. 
                     <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> Email </a>me to discuss your project!</p>
                 </div>
 
