@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../css/App.css'
 import SiteCard from './SiteCard'
 import Footer from './Footer'
-
+import Header from './Header'
 
 class Portfolio extends Component {
 
@@ -14,7 +14,8 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div>
+      <div className="portfolio-container">
+        <Header headerColor="header-main"/>
         <h1 className="portfolio-blog-page-title">Projects</h1>
         <div className="portfolio-main">
 

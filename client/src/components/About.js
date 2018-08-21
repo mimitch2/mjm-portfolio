@@ -30,7 +30,7 @@ class About extends Component {
     render(){            
       return (
         <div className="about-wrapper" id="container">
-          <Header />
+          <Header headerColor="header-main trans"/>
           <div className="intro-text" >  
             <h1 className="hello-text" >HELLO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
