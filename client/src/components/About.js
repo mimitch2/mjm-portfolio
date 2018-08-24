@@ -29,41 +29,60 @@ class About extends Component {
    
     render(){            
       return (
-        <div className="about-wrapper" id="container">
+        // <div className="about-wrapper">
+        <div className="austin-image-div">
           <Header headerColor="header-main trans"/>
+
           <div className="intro-text" >  
             <h1 className="hello-text" >HELLO</h1>
             <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
           </div>
 
-          <div className="image-div austin-image-div">
-            <div className="temp-div"> 
-              <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
-            </div> 
-            <div className ="content-text basic-flex-row">
-
-              <div className ="content-text-inner">
-                <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
-                <h2 className="bio-quote">"I beleive that intuitive, effortless user experiences should obfuscate the underlying technology."</h2>
-                 
-
-                <div className="bio-main">
-                  <p className="about-me-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. I beleive that intuitive, effortless user experiences should obfuscate the underlying technology. I make apps to impress people, not developers. </p>
-               
-                  <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications - 
-                    <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> email </a>me to discuss your project!</p>
-                </div>
-
-               
-               
-              </div>
-            </div>
+         
+          <div className="chevron-div basic-flex-row"> 
+            <i className="far fa-chevron-double-down"></i>
           </div>
+          <div className ="headshot-div">
+            <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
+          </div>
+          <div className ="content-text">
+           
+            <p className="bio-main">
+        
+              <span className="bio-lines"> I spent 20 years at Apple as a qa engineer and manager working on popular comsumer facing software. <br />
+              </span>
+              <span className="bio-lines">    My time there embedded several core principles in my mind that are the basis for how I approach  <br /> 
+              </span>
+              <span className="bio-lines">
+               designing and building web applications.  <br /> <br />
+              </span>
+              <span className="bio-lines"> I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.
+              </span>
+   
+
+   
+              {/*  
+    <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications - 
+      <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> email </a>me to discuss your project!</p> */}
+            </p>
+          </div>
+
+
+
+          <div className="temp-div"> 
+            <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
+          </div> 
+
+          {/* </div> */}
+            
+        
+        
           
-          <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
+          
 
           {/* <div className="about-content content-one basic-flex-row">      
           </div> */}
+          
             
         </div>
       )

@@ -32,20 +32,16 @@ class App extends Component {
    history.listen((location, action) => {
      // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
      // console.log(`The last navigation action was ${action}`)
-     this.props.setURL(`${location.pathname}${location.search}${location.hash}`)
+     //  this.props.setURL(`${location.pathname}${location.search}${location.hash}`)
      this.getTemp();
    })
    setTimeout(() => {
      this.setState({ cssShow: "content"})
    }, 2800);
 
-   //  setTimeout(() => {
-   //    this.getTemp();
-   //  }, 50000);
    
  }
 
-  //  https://cors-anywhere.herokuapp.com/
 
  async getTemp () {
    try {
@@ -73,9 +69,6 @@ class App extends Component {
            <img src="https://www.telerik.com/clientsfiles/244515_ie-double-scrollbar.jpg?sfvrsn=d930d843_0" alt=""/>
          </div>
 
-         {/* <header>
-           <Header />
-         </header> */}
          <Loading /> 
 
          <div className={this.state.cssShow}> 

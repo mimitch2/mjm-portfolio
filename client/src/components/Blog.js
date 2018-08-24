@@ -17,7 +17,7 @@ class Blog extends Component {
     };
   }
 
-  async fetchPosts (page) {
+  async fetchPosts (page) {// put this into App and send props
     try {
       const response = await butter.post.list({page: page, page_size: 20, category_slug: cat})
       const json = await response
