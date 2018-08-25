@@ -484,7 +484,7 @@ display: none;
 
 
 .austin-image-div {
-
+  position: relative;
   width: 100vw;
   height: 200vh;
   background-image: url(/img/IMG_0326.jpg);
@@ -497,40 +497,37 @@ display: none;
   /* align-items: flex-end; */
 }
 
+.about-overlay {
+  position: absolute;
+  height: 200vh;
+}
+
 .content-text {
   width: 100vw;
   color: var(--header-color);
-  position: absolute;
-  top: 110vh;
+  margin-top: 110vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-evenly;
 }
 
-.headshot {
+.headshot-div {
+  /* background-color: pink; */
   /* width: 100vw; */
-  -webkit-box-shadow: 2px 2px 15px rgba(50, 50, 50, .3);
-          box-shadow: 2px 2px 15px rgba(50, 50, 50, .3);
-  width: 35%;
-  margin: 20px 0px 0px 10px;
+  /* -webkit-box-shadow: 2px 2px 15px rgba(50, 50, 50, .3);
+          box-shadow: 2px 2px 15px rgba(50, 50, 50, .3); */
+  max-width: 60%;
+  margin: 30px 0px 0px 10px;
 }
 
-.bio-quote {
-  font-style: italic;
-  font-size: 2.3vw;
-  /* color: rgb(100, 100, 100); */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  /* margin: 0px 30px 0px 30px; */
-  font-weight: 200;
-  /* text-transform: uppercase; */
-  
+.headshot {
+  width: 100%
 }
+
 
 .bio-main {
-  width: 100vw;
+  /* width: 100vw; */
+  margin-top: 200px;
   padding: 100px;
   color: var(--header-color);
   /* text-shadow: 1px 1px white; */
@@ -541,8 +538,9 @@ display: none;
 }
 
 .bio-lines {
+  padding: 1px 4px 1px 4px;
   font-size: 1.4em;
-  background-color: rgba(50, 50, 50, .3);
+  background-color: rgba(0, 0, 0, .4);
 }
 
 

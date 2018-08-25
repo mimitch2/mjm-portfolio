@@ -32,58 +32,43 @@ class About extends Component {
         // <div className="about-wrapper">
         <div className="austin-image-div">
           <Header headerColor="header-main trans"/>
-
-          <div className="intro-text" >  
-            <h1 className="hello-text" >HELLO</h1>
-            <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
-          </div>
+          <div className="about-overlay">
+            <div className="intro-text" >  
+              <h1 className="hello-text" >HELLO</h1>
+              <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
+            </div>
 
          
-          <div className="chevron-div basic-flex-row"> 
-            <i className="far fa-chevron-double-down"></i>
-          </div>
-          <div className ="headshot-div">
-            <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
-          </div>
-          <div className ="content-text">
-           
-            <p className="bio-main">
-        
-              <span className="bio-lines"> I spent 20 years at Apple as a qa engineer and manager working on popular comsumer facing software. <br />
-              </span>
-              <span className="bio-lines">    My time there embedded several core principles in my mind that are the basis for how I approach  <br /> 
-              </span>
-              <span className="bio-lines">
+            <div className="chevron-div basic-flex-row"> 
+              <i className="far fa-chevron-double-down"></i>
+            </div>
+      
+            <div className ="content-text">
+
+              <div className ="headshot-div">
+                <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
+              </div>
+              <p className="bio-main">
+                <span className="bio-lines"> I spent 20 years at Apple as a qa engineer and manager working on popular consumer software. <br />
+                </span>
+                <span className="bio-lines">    My time there embedded several core principles in my mind that are the basis for how I approach  <br /> 
+                </span>
+                <span className="bio-lines">
                designing and building web applications.  <br /> <br />
-              </span>
-              <span className="bio-lines"> I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.
-              </span>
-   
+                </span>
+                <span className="bio-lines"> I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.
+                </span>
+              </p>
+              
+            </div>
 
-   
-              {/*  
-    <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications - 
-      <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> email </a>me to discuss your project!</p> */}
-            </p>
+
+
+            <div className="temp-div"> 
+              <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
+            </div> 
+
           </div>
-
-
-
-          <div className="temp-div"> 
-            <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
-          </div> 
-
-          {/* </div> */}
-            
-        
-        
-          
-          
-
-          {/* <div className="about-content content-one basic-flex-row">      
-          </div> */}
-          
-            
         </div>
       )
     }
