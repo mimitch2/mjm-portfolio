@@ -486,7 +486,7 @@ display: none;
 .austin-image-div {
   position: relative;
   width: 100vw;
-  height: 200vh;
+  min-height: 200vh;
   background-image: url(/img/IMG_0326.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -499,7 +499,7 @@ display: none;
 
 .about-overlay {
   position: absolute;
-  height: 200vh;
+  /* height: 200vh;  */
 }
 
 .content-text {
@@ -508,32 +508,31 @@ display: none;
   margin-top: 110vh;
   display: flex;
   /* flex-direction: column; */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .headshot-div {
-  /* background-color: pink; */
-  /* width: 100vw; */
-  /* -webkit-box-shadow: 2px 2px 15px rgba(50, 50, 50, .3);
-          box-shadow: 2px 2px 15px rgba(50, 50, 50, .3); */
-  max-width: 60%;
-  margin: 30px 0px 0px 10px;
+  width: 100%;
+  margin: 20px 0 0 10px;
 }
 
 .headshot {
-  width: 100%
+  width: 140%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
 }
 
 
 .bio-main {
-  /* width: 100vw; */
-  margin-top: 200px;
-  padding: 100px;
+  text-transform: uppercase;
+  width: max-content;
+  margin-top: 20vh;
+  padding: 0 200px 0 200px;
   color: var(--header-color);
   /* text-shadow: 1px 1px white; */
   font-size: 1.2em;
   /* background-color: rgba(255, 255, 255, .4); */
   font-weight: 200;
+  /* margin-bottom: 0; */
 
 }
 
@@ -823,6 +822,8 @@ a:visited {
   .card-overlay {
     font-size: 2vw;
   }
+
+
   
 }
 
@@ -882,6 +883,7 @@ a:visited {
     font-size: 26px;
  
   }
+
 
   .blog-page-title {
     font-size: 4.5vw;
