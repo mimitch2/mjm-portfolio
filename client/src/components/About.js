@@ -3,9 +3,20 @@ import React, {Component} from 'react'
 import '../css/App.css'
 import icons from './svgIcons.js'
 // import Footer from './Footer'
+import Header from './Header'
+
+
 
 
 class About extends Component {
+
+  componentDidMount = () => {
+    document.addEventListener("scroll", this.scroll);
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener("scroll", this.scroll);
+  }
 
     returnWeatherIcon = () => {
       if (this.props.icon === "partly-cloudy-day") {
@@ -24,48 +35,66 @@ class About extends Component {
         return null
       }
     }
+
+    scroll = () => {
+      const hello = document.getElementById("hello-text")
+      const intro = document.getElementById("intro-text-upper")
+      const chev = document.getElementById("chevron")
+
+      if (hello.getBoundingClientRect().y < 54){
+        hello.classList.add("hidden")
+      } else  if (hello.getBoundingClientRect().y > 54) {
+        hello.classList.remove("hidden")
+      }
+
+      if (intro.getBoundingClientRect().y < 84){
+        intro.classList.add("hidden")
+      } else  if (intro.getBoundingClientRect().y > 84) {
+        intro.classList.remove("hidden")
+      }
+
+      if (chev.getBoundingClientRect().y < 200){
+        chev.classList.add("hidden")
+      } else  if (chev.getBoundingClientRect().y > 200) {
+        chev.classList.remove("hidden")
+      }
+
+    }
    
     render(){            
       return (
-        <div className="about-main" id="main">
-          <div className="about-wrapper" id="container">
-          
+        <div className="austin-image-div" id="austin-image-div">
+          <Header headerColor="header-main trans"/>
+          <div className="about-overlay">
+
             <div className="intro-text" >  
-              <h1 className="hello-text" >HELLO</h1>
-              <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
+              <h1 className="hello-text" id="hello-text">HELLO</h1>
+              <p className="intro-text-upper" id="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
 
-            <div className="image-div austin-image-div">
-              <div className="temp-div"> 
-                <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
+         
+            <div className="chevron-div basic-flex-row" id="chevron"> 
+              <i className="far fa-chevron-double-down"></i>
+            </div>
+
+
+            <div className="temp-div"> 
+              <span>AUSTIN: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
+            </div> 
+      
+            <div className ="content-text">
+
+              <div className ="headshot-div">
+                <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
               </div>
+              <p className="bio-main">
+                <span className="bio-lines"> I spent 20 years at Apple as a qa engineer and manager working 
+                on wildly popular consumer-facing software. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. 
+                I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.<br />
+                </span>
+              </p>            
             </div>
-
-            <div className="chevron-div"> <i className="far fa-chevron-double-down"></i></div>
-
-            <div className="about-content content-one basic-flex-row">
-              <div className ="content-text basic-flex-row">
-
-                <div className ="content-text-inner">
-                  <img src="/img/headshot.jpg" alt="Headshot" className="headshot"/>
-                  <h2 className="bio-quote">"I beleive that intuitive, effortless user experiences should obfuscate the underlying technology."</h2>
-                 
-
-                  <div className="bio-main">
-                    <p className="bio-text"> I spent nearly 20 years at Apple as a software qa engineer and manager. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. I beleive that intuitive, effortless user experiences should obfuscate the underlying technology. I make apps to impress people, not developers. </p>
-               
-                    <p className="about-me-text">I specialize full-stack web pages utilizing MERN - MongoDB, Express Server, React.js and Node.js.  I can design and build anything from simple blogs to fully interactive business applications. 
-                      <a href="mailto:<mimitch@mac.com>" className="bio-email-link"> Email </a>me to discuss your project!</p>
-                  </div>
-
-                </div> 
-               
-              </div>
-                   
-            </div>
-            
           </div>
-        
         </div>
       )
     }

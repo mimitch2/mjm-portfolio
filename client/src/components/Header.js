@@ -1,23 +1,19 @@
 import React from 'react'
 import '../css/App.css';
-import Logo from '../containers/LogoContainer'
+import Logo from './Logo'
 import Links from './Links';
-import Nav from '../containers/NavContainer';
-// import PropTypes from 'prop-types'
+import Nav from './Nav';
 
-const Header = () => {
+const Header = (props) => {
 
   return (
-    <div className="header-main">
+    <header className={props.headerColor}>
       <Logo />
       <Nav />
       <Links />
-    </div>
+    </header>
   )
 }
 
-// Header.propTypes = {
-//   prop: PropTypes.array,
-// }
 
 export default Header;

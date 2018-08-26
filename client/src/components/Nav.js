@@ -35,7 +35,7 @@ class Nav extends Component{
    }else if (path.includes("post")){
      document.getElementById("/blog").className = this.state.selected
    }
-   this.props.set(path)
+   //  this.props.set(path)
  }
 
  setUnselected = () => {
@@ -44,7 +44,7 @@ class Nav extends Component{
  }
 
  handleClick = (e) => {
-   this.props.set(e.target.id)
+   //  this.props.set(e.target.id)
    this.setUnselected();
    e.target.className = this.state.selected
  }

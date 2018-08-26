@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import '../css/App.css'
 import SiteCard from './SiteCard'
 import Footer from './Footer'
-
+import Header from './Header'
 
 class Portfolio extends Component {
 
   componentDidMount = () => {
-    // setTimeout(() => {
-    //   this.setState({cardCss: "card-div"})
-    // }, 900);  
+    window.scrollTo(0, 0); 
   }
 
   render() {
     return (
-      <div>
+      <div className="portfolio-container">
+        <Header headerColor="header-main"/>
         <h1 className="portfolio-blog-page-title">Projects</h1>
         <div className="portfolio-main">
 

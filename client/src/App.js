@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Header from './components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
@@ -19,33 +18,28 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      loaded: false,
       cssShow: "content hidden",
       temp: "",
       icon: ""
     }
   }
 
+  // var percent=1;
+  // document.querySelector('div.content').style.top = Math.round( screen.height * percent)+'px';
+  // document.querySelector('div.content').style.width = Math.round( screen.width * percent)+'px';
+
 
  componentDidMount = () => {
- 
    this.getTemp();
    history.listen((location, action) => {
-     // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-     // console.log(`The last navigation action was ${action}`)
-     this.props.setURL(`${location.pathname}${location.search}${location.hash}`)
-     this.getTemp();
+
    })
+
    setTimeout(() => {
      this.setState({ cssShow: "content"})
-   }, 2800);
-
-   //  setTimeout(() => {
-   //    this.getTemp();
-   //  }, 50000);
-   
+   }, 2200);
  }
-
-  //  https://cors-anywhere.herokuapp.com/
 
  async getTemp () {
    try {
@@ -61,7 +55,7 @@ class App extends Component {
  render = () => {
    return (
      <BrowserRouter>
-       <div className="App" >
+       <div className="App" id="App">
    
          <div className="pre-load-all-hidden">
            <img src="/img/IMG_0326.jpg" alt=""/>
@@ -73,15 +67,11 @@ class App extends Component {
            <img src="https://www.telerik.com/clientsfiles/244515_ie-double-scrollbar.jpg?sfvrsn=d930d843_0" alt=""/>
          </div>
 
-         <header>
-           <Header />
-         </header>
          <Loading /> 
 
          <div className={this.state.cssShow}> 
            <Switch {...this.props}>
              <Route exact path="/portfolio" component={Portfolio} />
-             {/* <Route exact path="/blog" component={Blog} /> */}
              <Route exact path="/blog" component={Blog} />
              <Route path="/post/:slug" component={BlogEntry} />
              <Route exact path="/"  render={(props) => <About {...props} temp={this.state.temp} icon={this.state.icon}/>} />
