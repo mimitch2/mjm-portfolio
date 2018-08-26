@@ -26,7 +26,6 @@ class Portfolio extends Component {
                   <i className="fab port-icon fa-html5"></i>
                   <i className="fab port-icon fa-js-square"></i>
                   <i className="fab port-icon fa-css3-alt"></i>
-                  {/* <i className="fab port-icon fa-node"></i> */}
                 </div>} 
               url="http://www.mikejmitchellphotography.com/"/>
           </div>

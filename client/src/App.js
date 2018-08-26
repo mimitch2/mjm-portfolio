@@ -8,8 +8,6 @@ import Portfolio from './components/Portfolio'
 import Blog from './components/Blog'
 import BlogEntry from "./components/BlogEntry"
 import Oops from './components/Oops'
-// import Footer from './components/Footer'
-
 
 const history = createHistory()
  

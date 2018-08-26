@@ -449,7 +449,7 @@ display: none;
           align-items: flex-start;
   width: 100vw;
   /* margin-top: calc(100vh - 58px); */
-  position: fixed;
+  position: absolute;
   margin: 96vh 0 0 22px;
   font-size: 1.4em;
   font-weight: 200;
@@ -524,16 +524,12 @@ display: none;
 
 .about-overlay {
   position: absolute;
-  /* height: 200vh;  */
 }
 
 .content-text {
   width: 100vw;
   color: var(--header-color);
-  margin-top: 110vh;
-  display: flex;
-  /* flex-direction: column; */
-  /* justify-content: space-evenly; */
+  margin-top: 110vh;  
 }
 
 .headshot-div {
@@ -543,23 +539,18 @@ display: none;
 }
 
 .headshot {
-  width: 140%;
+  width: 34%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
 }
 
 
 .bio-main {
   text-transform: uppercase;
-  width: max-content;
   margin-top: 20vh;
-  padding: 0 200px 0 200px;
+  padding: 0 120px 0 120px;
   color: var(--header-color);
-  /* text-shadow: 1px 1px white; */
   font-size: 1.2em;
-  /* background-color: rgba(255, 255, 255, .4); */
   font-weight: 200;
-  /* margin-bottom: 0; */
-
 }
 
 .bio-lines {
@@ -579,11 +570,6 @@ display: none;
 }
 
 .portfolio-main {
-   /* background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/img/DSCF0035.jpg); */
   padding: 34px 0px 34px 0px;
   width: 80vw;
   display: grid;
@@ -699,7 +685,6 @@ a:visited {
 }
 
 .blog-featured-image {
-  /* border-radius: 4px; */
   max-width: 100%;
   height: auto;
 }
@@ -709,41 +694,11 @@ a:visited {
   color: var(--orange-color);
 }
 
-
-
-/* .post-container {
-  h1, h2, h3, h4, h5 {
-    font-weight: 600;
-    margin-bottom: 1em;
-    margin-top: 1.5em;
-  }
-} */
-
-
   p {
-    /* font-family: Georgia, Cambria, "Times New Roman", Times, serif; */
     font-size: 1.25em;
     line-height: 1.58;
-    /* margin-bottom: 1.25em; */
     font-weight: 200;
-    /* letter-spacing: -.003em; */
   }
-
-  /* Responsive floating */
-  /* @media only screen and (min-width: 720px)  {
-    .butter-float-left {
-      float: left;
-      margin: 0px 10px 10px 0px;
-    }
-
-    .butter-float-right {
-      float: right;
-      margin: 0px 0px 10px 10px;
-    }
-  } */
-
-  /* Image caption */
-
 
   figcaption {
     font-style: italic;
@@ -756,23 +711,8 @@ a:visited {
     font-size: 90%;
     color: #c7254e;
     background-color: #f9f2f4;
-    /* border-radius: 4px; */
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   }
-/* 
-  pre {
-    display: block;
-    padding: 1em;
-    margin: 0 0 2em;
-    font-size: 1em;
-    line-height: 1.4;
-    word-break: break-all;
-    word-wrap: break-word;
-    color: #333333;
-    background-color: #f5f5f5;
-    font-family: Menlo, Monaco,Consolas, "Courier New", monospace;
-  } */
-
 
 
 /************** footer **************/
@@ -780,24 +720,15 @@ a:visited {
 .footer-main {
   padding: 15px 0px 20px 0px;
   font-size: 1em;
-  /* padding: 0px 10px 0px 10px; */
-  /* position: absolute; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* z-index: 100; */
-  /* bottom: 0; */
-  /* color: var(--orange-color); */
-  /* left:0; */
   height: 50px;
-  /* background-color: var(--header-color); */
 }
 
 .butter-logo {
   height: 30px;
-  /* background-color: var(--butter-color);
-  border-radius: 3px; */
 }
 
 .react-logo {
@@ -814,6 +745,13 @@ a:visited {
   text-transform: uppercase;
 }
 
+.about-footer {
+  color: var(--orange-color);
+  position: absolute;
+  top: 190vh;
+  justify-content: space-around;
+  padding: 0;
+}
 
 /************** media queries **************/
 
@@ -862,19 +800,40 @@ a:visited {
   .card-overlay {
     font-size: 2vw;
   }
+
+  .bio-main {
+    margin-top: 20vh;
+    padding: 0 100px 0 100px;
+    font-size: 1.1em;
+  }
   
 }
 @media (min-height: 550px) and (max-height: 768px) {
   .headshot {
-   width: 28%;
+   width: 20%;
+   margin-top: 80px;
   }
+
   
+  .bio-main {
+    margin-top: 40px;
+    padding: 0 90px 0 90px;
+    font-size: .7em;
+  }
 }
 
-@media (max-height: 549px) {
+@media (max-height: 768px) {
   .headshot {
-   width: 22%;
-  }
+    width: 20%;
+    margin-top: 80px;
+   }
+ 
+   
+   .bio-main {
+     margin-top: 40px;
+     padding: 0 90px 0 90px;
+     font-size: .7em;
+   }
   
 }
 
@@ -909,27 +868,16 @@ a:visited {
     font-size: 26px;
  
   }
-
-
   .blog-page-title {
     font-size: 4.5vw;
   }
 
-  /* .image-div {
-    height: calc(100vh - 70px);
+  .bio-main {
+    margin-top: 20vh;
+    padding: 0 100px 0 100px;
+    font-size: 1.1em;
   }
-
-  .about-content {
-    height: calc(100vh - 70px);
-  } */
-  
 }
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
 
 
 @media (min-width: 320px) and (max-width: 480px) {

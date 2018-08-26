@@ -4,7 +4,7 @@ import '../css/App.css'
 
 const Footer = (props) => {  
   return (
-    <footer className="footer-main">
+    <footer className={`footer-main ${props.className}`}>
       <span className="footer-credits footer-item basic-flex-row">
         {props.credits}
         &nbsp;

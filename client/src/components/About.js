@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-// import ReduxIcon from './ReduxIcon';
 import '../css/App.css'
 import icons from './svgIcons.js'
-// import Footer from './Footer'
+import Footer from './Footer'
 import Header from './Header'
 
 
@@ -53,9 +52,9 @@ class About extends Component {
         intro.classList.remove("hidden")
       }
 
-      if (chev.getBoundingClientRect().y < 200){
+      if (chev.getBoundingClientRect().y < 400){
         chev.classList.add("hidden")
-      } else  if (chev.getBoundingClientRect().y > 200) {
+      } else  if (chev.getBoundingClientRect().y > 400) {
         chev.classList.remove("hidden")
       }
 
@@ -94,7 +93,9 @@ class About extends Component {
                 </span>
               </p>            
             </div>
+            <Footer credits="Powered by:   "  copyWrite="© 2018 Mike J Mitchell" className="about-footer"/>
           </div>
+        
         </div>
       )
     }
