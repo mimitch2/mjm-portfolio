@@ -42,6 +42,11 @@ class About extends Component {
             <div className="chevron-div basic-flex-row"> 
               <i className="far fa-chevron-double-down"></i>
             </div>
+
+
+            <div className="temp-div"> 
+              <span>AUSTIN: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
+            </div> 
       
             <div className ="content-text">
 
@@ -68,10 +73,6 @@ class About extends Component {
             </div>
 
 
-
-            <div className="temp-div"> 
-              <span>Austin: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
-            </div> 
 
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import Butter from 'buttercms';
 import '../css/App.css'
+import Loading from './Loading'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -13,11 +14,12 @@ class Blog extends Component {
     super(props);
 
     this.state = {
-      loaded: false
+      loaded: false,
+      resp: null
     };
   }
 
-  async fetchPosts (page) {// put this into App and send props
+  async fetchPosts (page) {
     try {
       const response = await butter.post.list({page: page, page_size: 20, category_slug: cat})
       const json = await response
@@ -26,13 +28,10 @@ class Blog extends Component {
       }) 
       setTimeout(() => {
         this.setState({ loaded: true})
-      }, 200);
+      }, 400);
     } catch (error) {
       console.log(error);
     }  
-
-
-    
     // console.log(this.state.resp);
 
     // butter.content.retrieve(['pics'])
@@ -42,13 +41,6 @@ class Blog extends Component {
     //     console.log(resp)
     //   });
 
-    // butter.category.retrieve('test')
-    //   .then(function(resp) {
-    //     console.log(resp.data)
-    //   }).catch(function(resp) {
-    //     console.log(resp)
-    //   });
-    // console.log(this.state.resp);  
   }
 
   returnBullet = (i, length) => {
@@ -61,46 +53,44 @@ class Blog extends Component {
   componentDidMount = () => {
     const page = this.props.match.params.page || 1;
     this.fetchPosts(page)
-    // setInterval(() => {
-    //   this.fetchPosts(page)
-    // }, 10000)
+    console.log(this.props);
   }
 
   render() {
     if (this.state.loaded) {
       const { next_page, previous_page } = this.state.resp.meta;
       return (
-        <div className="blog-container">
-          <div className="blog-main-page basic-flex-col">
-            <Header headerColor="header-main" />
-            <h1 className="portfolio-blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
+        // <div className="blog-container">
+        <div className="blog-main-page basic-flex-col">
+          <Header headerColor="header-main" />
+          <h1 className="portfolio-blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
 
-            {this.state.resp.data.map((post, i) => {
-              return (
-                <div className="blog-card" key={i}>
-                  <Link to={`/post/${post.slug}`} key={post.slug}>
-                    <h1 className="blog-link">{post.title}</h1><img src={post.featured_image} alt="" className="blog-featured-image"/>
-                    <span className="blog-featured-image-caption"></span>
-                  </Link>
-                  <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> 
-                  <span className="blog-categories">
-                    {post.categories.map((cat, i )=> {return cat.name + this.returnBullet(i, post.categories.length -1)})}
-                  </span>
-                  <p className="blog-summary">{post.summary}</p>
-                </div>
-              )
-            })}
-            <br />
+          {this.state.resp.data.map((post, i) => {
+            return (
+              <div className="blog-card" key={i}>
+                <Link to={`/post/${post.slug}`} key={post.slug}>
+                  <h1 className="blog-link">{post.title}</h1><img src={post.featured_image} alt="" className="blog-featured-image"/>
+                  <span className="blog-featured-image-caption"></span>
+                </Link>
+                <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> 
+                <span className="blog-categories">
+                  {post.categories.map((cat, i )=> {return cat.name + this.returnBullet(i, post.categories.length -1)})}
+                </span>
+                <p className="blog-summary">{post.summary}</p>
+              </div>
+            )
+          })}
+          <br />
 
-            <div>
-              {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
-              {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
-            </div>
-            <Footer credits="Powered by:   " icon={<i className="fab footer-icon fa-react"></i>} plus={<i className="fal fa-plus" style={{fontSize: ".9em"}}></i>}
-              butter={<a href="https://buttercms.com/" className="butter-link" target="_blank" rel='noopener noreferrer'><img src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png" alt="butter cms" className="butter-logo"/></a>} 
-              copyWrite="© 2018 Mike J Mitchell"/>
+          <div>
+            {previous_page && <Link to={`/p/${previous_page}`}>Prev</Link>}
+            {next_page && <Link to={`/p/${next_page}`}>Next</Link>}
           </div>
+          <Footer credits="Powered by:   " icon={<i className="fab footer-icon fa-react"></i>} plus={<i className="fal fa-plus" style={{fontSize: ".9em"}}></i>}
+            butter={<a href="https://buttercms.com/" className="butter-link" target="_blank" rel='noopener noreferrer'><img src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png" alt="butter cms" className="butter-logo"/></a>} 
+            copyWrite="© 2018 Mike J Mitchell"/>
         </div>
+        // </div>
       );
     } else {
       return (
@@ -109,6 +99,7 @@ class Blog extends Component {
             <Header headerColor="header-main" />
             <h1 className="portfolio-blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
           </div>
+          <Loading />
         </div>
       )
     }

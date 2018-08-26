@@ -1,8 +1,8 @@
 import React from 'react'
 import '../css/App.css';
-import Logo from '../containers/LogoContainer'
+import Logo from './Logo'
 import Links from './Links';
-import Nav from '../containers/NavContainer';
+import Nav from './Nav';
 
 const Header = (props) => {
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './css/App.css';
-// import Header from './components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import createHistory from 'history/createBrowserHistory'
 import About from './components/About'
@@ -19,28 +18,34 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      loaded: false,
       cssShow: "content hidden",
       temp: "",
       icon: ""
     }
   }
 
+ 
+
 
  componentDidMount = () => {
- 
+
    this.getTemp();
    history.listen((location, action) => {
      // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
      // console.log(`The last navigation action was ${action}`)
      //  this.props.setURL(`${location.pathname}${location.search}${location.hash}`)
-     this.getTemp();
    })
+
    setTimeout(() => {
      this.setState({ cssShow: "content"})
+     console.log(this.props);
    }, 2800);
 
    
  }
+
+
 
 
  async getTemp () {
@@ -74,7 +79,6 @@ class App extends Component {
          <div className={this.state.cssShow}> 
            <Switch {...this.props}>
              <Route exact path="/portfolio" component={Portfolio} />
-             {/* <Route exact path="/blog" component={Blog} /> */}
              <Route exact path="/blog" component={Blog} />
              <Route path="/post/:slug" component={BlogEntry} />
              <Route exact path="/"  render={(props) => <About {...props} temp={this.state.temp} icon={this.state.icon}/>} />
