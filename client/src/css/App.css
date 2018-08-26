@@ -1,5 +1,6 @@
 
 :root {
+  --background-color: rgb(242, 242, 242);
   --green-color: #BFBA3D;
   --header-color: #e8e6de;
   --headeropacity-color: #e8e6decc;
@@ -95,8 +96,9 @@ display: none;
   opacity: .5;
   letter-spacing: 1.4px;
   font-size: 3em;
-  font-weight: 300;
+  font-weight: 200;
   font-style: italic;
+  text-transform: uppercase;
 }
 
 .loading-letter1 {
@@ -225,7 +227,7 @@ display: none;
   top: 0;
   width: 100vw;
   height: 80px;
-  background-color: white;
+  background-color:var(--background-color); 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,7 +246,7 @@ display: none;
 /************* logo ***************************/
 
 .logo-div {
-  margin-left: 12px;
+  margin: 10px 0 0 10px;
 }
 
 #logo-svg {
@@ -351,7 +353,7 @@ display: none;
   }
 
 .content {
-  background-color: white;
+  background-color: var(--background-color);
 
 /* background-attachment: fixed; */
   width: 100vw;
@@ -362,8 +364,8 @@ display: none;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  animation: fadeIn 1s ease-in;
-    -webkit-animation: fadeIn 1s ease-in;
+  animation: fadeIn .8s ease-in;
+    -webkit-animation: fadeIn .8s ease-in;
 }
 
   @-webkit-keyframes fadeIn {
@@ -408,16 +410,33 @@ display: none;
   color: var(--orange-color);
 }
 
+
+
 .hello-text {
+  transition: .4s ease-in-out;
+  opacity: 1;
   margin-top: 100px;
   font-size: 5.0em;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
+.hello-text.hidden {
+  opacity: 0;
+  transition: .4s ease-in-out;
+}
+
+
 .intro-text-upper {
+  transition: .4s ease-in-out;
+  opacity: 1;
   font-weight: 300;
   font-size: 1.4em;
+}
+
+.intro-text-upper.hidden {
+  opacity: 0;
+  transition: .4s ease-in-out;
 }
 
 .temp-div {
@@ -454,6 +473,11 @@ display: none;
   position: absolute;
   top: calc(100vh - 120px);
   width: 100vw;
+}
+
+.chevron-div.hidden {
+  opacity: 0;
+  transition: .4s ease-in-out;
 }
 
 .fa-chevron-double-down {

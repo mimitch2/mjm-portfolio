@@ -7,7 +7,16 @@ import Header from './Header'
 
 
 
+
 class About extends Component {
+
+  componentDidMount = () => {
+    document.addEventListener("scroll", this.scroll);
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener("scroll", this.scroll);
+  }
 
     returnWeatherIcon = () => {
       if (this.props.icon === "partly-cloudy-day") {
@@ -26,20 +35,45 @@ class About extends Component {
         return null
       }
     }
+
+    scroll = () => {
+      const hello = document.getElementById("hello-text")
+      const intro = document.getElementById("intro-text-upper")
+      const chev = document.getElementById("chevron")
+
+      if (hello.getBoundingClientRect().y < 54){
+        hello.classList.add("hidden")
+      } else  if (hello.getBoundingClientRect().y > 54) {
+        hello.classList.remove("hidden")
+      }
+
+      if (intro.getBoundingClientRect().y < 84){
+        intro.classList.add("hidden")
+      } else  if (intro.getBoundingClientRect().y > 84) {
+        intro.classList.remove("hidden")
+      }
+
+      if (chev.getBoundingClientRect().y < 200){
+        chev.classList.add("hidden")
+      } else  if (chev.getBoundingClientRect().y > 200) {
+        chev.classList.remove("hidden")
+      }
+
+    }
    
     render(){            
       return (
-        // <div className="about-wrapper">
-        <div className="austin-image-div">
+        <div className="austin-image-div" id="austin-image-div">
           <Header headerColor="header-main trans"/>
           <div className="about-overlay">
+
             <div className="intro-text" >  
-              <h1 className="hello-text" >HELLO</h1>
-              <p className="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
+              <h1 className="hello-text" id="hello-text">HELLO</h1>
+              <p className="intro-text-upper" id="intro-text-upper"> MY NAME IS MIKE. I DESIGN AND BUILD WEBSITES IN AUSTIN, TX</p>
             </div>
 
          
-            <div className="chevron-div basic-flex-row"> 
+            <div className="chevron-div basic-flex-row" id="chevron"> 
               <i className="far fa-chevron-double-down"></i>
             </div>
 
@@ -58,22 +92,8 @@ class About extends Component {
                 on wildly popular consumer-facing software. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. 
                 I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.<br />
                 </span>
-                {/* <span className="bio-lines">  <br />
-                </span>
-                <span className="bio-lines">      <br /> 
-                </span>
-                <span className="bio-lines">
-                
-                  <br /> <br />
-                </span>
-                <span className="bio-lines"> 
-                </span> */}
-              </p>
-              
+              </p>            
             </div>
-
-
-
           </div>
         </div>
       )

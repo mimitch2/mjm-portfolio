@@ -26,6 +26,7 @@ class Blog extends Component {
       this.setState({
         resp: json.data
       }) 
+      console.log(this.state.resp);
       setTimeout(() => {
         this.setState({ loaded: true})
       }, 400);
@@ -44,23 +45,20 @@ class Blog extends Component {
   }
 
   returnBullet = (i, length) => {
-    if(i < length){
-      return " • "
-    }
-    return ""
+    return (i) < length ? " • " : ""
   }
 
   componentDidMount = () => {
     const page = this.props.match.params.page || 1;
     this.fetchPosts(page)
-    console.log(this.props);
+   
+    
   }
 
   render() {
     if (this.state.loaded) {
       const { next_page, previous_page } = this.state.resp.meta;
       return (
-        // <div className="blog-container">
         <div className="blog-main-page basic-flex-col">
           <Header headerColor="header-main" />
           <h1 className="portfolio-blog-page-title">THOUGHTS ON WEB DEVELOPMENT</h1>
@@ -68,15 +66,20 @@ class Blog extends Component {
           {this.state.resp.data.map((post, i) => {
             return (
               <div className="blog-card" key={i}>
+
                 <Link to={`/post/${post.slug}`} key={post.slug}>
                   <h1 className="blog-link">{post.title}</h1><img src={post.featured_image} alt="" className="blog-featured-image"/>
                   <span className="blog-featured-image-caption"></span>
                 </Link>
+
                 <p className="blog-author">{post.author.first_name} {post.author.last_name} </p> 
+
                 <span className="blog-categories">
                   {post.categories.map((cat, i )=> {return cat.name + this.returnBullet(i, post.categories.length -1)})}
                 </span>
+
                 <p className="blog-summary">{post.summary}</p>
+
               </div>
             )
           })}
@@ -90,7 +93,6 @@ class Blog extends Component {
             butter={<a href="https://buttercms.com/" className="butter-link" target="_blank" rel='noopener noreferrer'><img src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png" alt="butter cms" className="butter-logo"/></a>} 
             copyWrite="© 2018 Mike J Mitchell"/>
         </div>
-        // </div>
       );
     } else {
       return (

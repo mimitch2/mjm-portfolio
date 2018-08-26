@@ -25,28 +25,21 @@ class App extends Component {
     }
   }
 
- 
+  // var percent=1;
+  // document.querySelector('div.content').style.top = Math.round( screen.height * percent)+'px';
+  // document.querySelector('div.content').style.width = Math.round( screen.width * percent)+'px';
 
 
  componentDidMount = () => {
-
    this.getTemp();
    history.listen((location, action) => {
-     // console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
-     // console.log(`The last navigation action was ${action}`)
-     //  this.props.setURL(`${location.pathname}${location.search}${location.hash}`)
+
    })
 
    setTimeout(() => {
      this.setState({ cssShow: "content"})
-     console.log(this.props);
-   }, 2800);
-
-   
+   }, 2200);
  }
-
-
-
 
  async getTemp () {
    try {
@@ -62,7 +55,7 @@ class App extends Component {
  render = () => {
    return (
      <BrowserRouter>
-       <div className="App" >
+       <div className="App" id="App">
    
          <div className="pre-load-all-hidden">
            <img src="/img/IMG_0326.jpg" alt=""/>
