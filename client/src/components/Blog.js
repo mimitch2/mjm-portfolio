@@ -68,7 +68,8 @@ class Blog extends Component {
               <div className="blog-card" key={i}>
 
                 <Link to={`/post/${post.slug}`} key={post.slug}>
-                  <h1 className="blog-link">{post.title}</h1><img src={post.featured_image} alt="" className="blog-featured-image"/>
+                  <h1 className="blog-link">{post.title}</h1>
+                  <img src={post.featured_image} alt="" className="blog-featured-image"/>
                   <span className="blog-featured-image-caption"></span>
                 </Link>
 

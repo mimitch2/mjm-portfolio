@@ -5,9 +5,9 @@
   --header-color: #e8e6de;
   --headeropacity-color: #e8e6decc;
   --blue-color: #8AB2C2;
-  --headertext-color: rgb(30,30,30);
+  --headertext-color: rgb(24,24,24);
   --orange-color: #DC5620;
-  --title-color: rgb(75, 75, 75);
+  --title-color: rgb(60, 60, 60);
   --react-color: #00d8ff;
   --butter-color: #ffc825;
   --calcHeight-meas: calc(100vh - 141px);
@@ -54,13 +54,59 @@
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
   width: 100vw;
-  /* height: 100vh; */
   font-weight: 300;
 }
 
-.pre-load-all-hidden {
-display: none;
+body {
+  overflow-y: scroll;
 }
+
+.pre-load-all-hidden {
+  display: none;
+}
+
+/******************************** content **************/
+
+.content.hidden {
+  display: none;
+  }
+
+.content {
+  background-color: var(--background-color);
+  /* background-image: url(/img/IMG_0326.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; */
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  animation: fadeIn .8s ease-in;
+    -webkit-animation: fadeIn .8s ease-in;
+}
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+/***************************** loading  ****************************/
 
 .loading {
   width: 100vw;
@@ -173,17 +219,14 @@ display: none;
 @-webkit-keyframes loading {
   0% {
     opacity: .4;
-
   }
   50% {
    opacity: 1;
   }
   100% {
     opacity: .4;
- 
   }
 }
-
 
 @keyframes loading {
   0% {
@@ -197,37 +240,24 @@ display: none;
   }
 }
 
-
 .bad-url {
   width: 100vw;
   height: calc(100vh - 130px);
-
 }
 
-/* ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  width: 15px;
-  background: var(--header-color)
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(148, 148, 148, 0.7); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(97, 97, 97, .7); 
-} */
+/******************** header *****************************/
 
 .header-main {
-  z-index: 10;
+  background-color: var(--background-color);
+  /* background-image: url(/img/IMG_0326.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; */
+  z-index: 100;
   position: fixed;
   top: 0;
   width: 100vw;
   height: 80px;
-  background-color:var(--background-color); 
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,10 +270,13 @@ display: none;
 }
 
 .header-main.trans {
-    background-color: rgba(255, 255, 255, 0)
+ background-image: url(/img/IMG_0326.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
-/************* logo ***************************/
+/************************ logo ***************************/
 
 .logo-div {
   margin: 10px 0 0 10px;
@@ -253,7 +286,7 @@ display: none;
   width: 72px;
 }
 
-/************ nav *******************/
+/*************************** nav ******************************/
 
 .nav-main {
   display: -webkit-box;
@@ -346,50 +379,9 @@ display: none;
   color: var(--orange-color);
 }
 
-/************** content **************/
-
-.content.hidden {
-  display: none;
-  }
-
-.content {
-  background-color: var(--background-color);
-
-/* background-attachment: fixed; */
-  width: 100vw;
-  min-height: 100vh;
-  /* margin-top: 80px; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  animation: fadeIn .8s ease-in;
-    -webkit-animation: fadeIn .8s ease-in;
-}
-
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-/************** about **************/
+/************** about **********************************/
 
 .about-wrapper {
-  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,7 +440,6 @@ display: none;
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100vw;
-  /* margin-top: calc(100vh - 58px); */
   position: absolute;
   margin: 96vh 0 0 22px;
   font-size: 1.4em;
@@ -507,7 +498,6 @@ display: none;
   }
 }
 
-
 .austin-image-div {
   position: relative;
   width: 100vw;
@@ -519,7 +509,6 @@ display: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: flex-end; */
 }
 
 .about-overlay {
@@ -560,7 +549,7 @@ display: none;
 }
 
 
-/************** portfolio **************/
+/************** portfolio ***********************************/
 
 .portfolio-container, .blog-container{
   width: 100vw;
@@ -582,7 +571,7 @@ display: none;
 .site-card {
   -webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, .3);
           box-shadow: 1px 1px 5px rgba(50, 50, 50, .3); 
-display: grid;
+  display: grid;
   font-weight: 200;
   color: white;
   align-items: center;
@@ -591,7 +580,6 @@ display: grid;
 }
 
 .card-image {
-
   width: 100%;
 }
 
@@ -600,9 +588,10 @@ display: grid;
   z-index: 5;
   font-size: 1.5vw;
   position: absolute;
-  background-color: rgba(0, 0, 0, .9);
+  bottom: 0;
+  background-color: rgba(28, 28, 28, .9);
   width: 100%;
-  height: 100%;
+  height: 0%;
   opacity: 0;
   -webkit-transition: .4s;
           transition: .4s;
@@ -615,8 +604,9 @@ display: grid;
   -webkit-transition-delay: .2s;
           transition-delay: .2s;
   opacity: 1;
-}
+  height: 50%;
 
+}
 
 .overlay-heading {
   font-size: 1.9em;
@@ -646,7 +636,7 @@ display: grid;
 .portfolio-blog-page-title {
   margin-top: 120px;
   width: 80vw;
-  background-color: rgb(75, 75, 75);
+  background-color: var(--title-color);
   color: var(--header-color);
   font-size: 3.5vw;
   font-weight: 300;
@@ -662,6 +652,7 @@ display: grid;
 }
 
 .blog-link {
+  /* background-color: rgba(255, 255, 255, .4); */
   font-weight: 300;
 }
 
@@ -718,10 +709,11 @@ a:visited {
 /************** footer **************/
 
 .footer-main {
+  color: var(--orange-color);
   padding: 15px 0px 20px 0px;
   font-size: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 50px;
@@ -732,8 +724,7 @@ a:visited {
 }
 
 .react-logo {
-  height: 30px;
-  transform: translateY(-2px);
+  height: 20px;
 }
 
 .footer-icon {
@@ -748,7 +739,7 @@ a:visited {
 .about-footer {
   color: var(--orange-color);
   position: absolute;
-  top: 190vh;
+  top: 194vh;
   justify-content: space-around;
   padding: 0;
 }
@@ -767,34 +758,19 @@ a:visited {
   } 
 }
 
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   
   
 }
 
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
+
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .card-overlay {
     font-size: 2vw;
   }
-
-
-  
 }
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .card-overlay {
@@ -806,8 +782,8 @@ a:visited {
     padding: 0 100px 0 100px;
     font-size: 1.1em;
   }
-  
 }
+
 @media (min-height: 550px) and (max-height: 768px) {
   .headshot {
    width: 20%;
@@ -837,16 +813,9 @@ a:visited {
   
 }
 
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-  /* .header-main {
-    height: 70px;
-  } */
   .nav-list {
     width: 45vw;
   }
@@ -856,7 +825,7 @@ a:visited {
   }
 
   #logo-svg {
-    width: 68px;
+    width: 58px;
   }
   
   .links-main {

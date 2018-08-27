@@ -10,7 +10,7 @@ const Footer = (props) => {
         &nbsp;
         <a href="https://reactjs.org/" className="react-link" target="_blank" rel='noopener noreferrer'>
           {/* {props.icon} */}
-          <img src="http://www.super-script.us/media/2015-08-05-react-resources/react-logo.png" alt="React logo" className="react-logo"/>
+          <img src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png" alt="React logo" className="react-logo"/>
         </a>
         &nbsp;
         &nbsp;
