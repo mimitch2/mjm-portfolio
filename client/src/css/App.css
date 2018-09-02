@@ -142,11 +142,6 @@ body {
   text-transform: uppercase;
 }
 
-.ast {
-  transform: translateY(.25em)
-}
-
-
 .loading-letter1 {
   -webkit-animation: loading 1.2s ease-in-out infinite;
           animation: loading 1.2s ease-in-out infinite;
@@ -270,10 +265,6 @@ body {
 
 .header-main {
   background-color: var(--background-color);
-  /* background-image: url(/img/IMG_0326.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover; */
   z-index: 100;
   position: fixed;
   top: 0;
@@ -301,10 +292,12 @@ body {
 
 .logo-div {
   margin: 10px 0 0 10px;
+  
 }
 
 #logo {
   width: 72px;
+  border-radius: 10px;
 }
 
 /*************************** nav ******************************/
@@ -530,9 +523,9 @@ body {
   justify-content: space-between;
 }
 
-.about-overlay {
+/* .about-overlay {
   position: absolute;
-}
+} */
 
 .content-text {
   width: 100vw;
@@ -554,10 +547,10 @@ body {
 
 .bio-main {
   text-transform: uppercase;
-  margin-top: 50px;
+  margin-top: 90px;
   padding: 0 120px 0 120px;
   color: var(--header-color);
-  /* font-size: 1.5vw; */
+  font-size: 1.6em;
   font-weight: 200;
 }
 
@@ -692,6 +685,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -856,8 +850,9 @@ p code {
   }
 
   .bio-main {
+    font-size: 1.4em;
     margin-top: 10vh;
-    padding: 0 60px 0 60px;
+    padding: 0 30px 0 30px;
   }
 }
 
@@ -897,6 +892,7 @@ p code {
 
   .intro-text-upper {
     font-size: 1.1em;
+    padding: 0 20px 0 20px;
   }
 
   .temp-div {

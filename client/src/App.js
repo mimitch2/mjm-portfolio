@@ -36,7 +36,7 @@ class App extends Component {
 
    setInterval(() => {
      this.getTemp();
-   }, 100000)
+   }, 300000)
    
 
    setTimeout(() => {
