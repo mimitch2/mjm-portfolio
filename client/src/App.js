@@ -34,6 +34,11 @@ class App extends Component {
 
    })
 
+   setInterval(() => {
+     this.getTemp();
+   }, 100000)
+   
+
    setTimeout(() => {
      this.setState({ cssShow: "content"})
    }, 2200);
@@ -50,6 +55,7 @@ class App extends Component {
      console.log(error);
    }
  }
+
 
  render = () => {
    return (
