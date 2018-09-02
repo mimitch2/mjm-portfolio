@@ -135,14 +135,14 @@ body {
 
 .letter {
   opacity: .3;
-  letter-spacing: 1.4px;
-  font-size: 3em;
+  /* letter-spacing: 1.4px; */
+  font-size: 1.3em;
   font-weight: 200;
   /* font-style: italic; */
   text-transform: uppercase;
 }
 
-.loading-letter1 {
+/* .loading-letter1 {
   -webkit-animation: loading 1.2s ease-in-out infinite;
           animation: loading 1.2s ease-in-out infinite;
 }
@@ -254,7 +254,7 @@ body {
   100% {
     opacity: .3;
   }
-}
+} */
 
 .bad-url {
   width: 100vw;
@@ -873,9 +873,7 @@ pre {
 
 @media (min-width: 300px) and (max-width: 480px) {
 
-  .letter {
-    font-size: 2em;
-  }
+
   .nav-list {
     width: 50vw;
     font-size: 14px;
@@ -930,8 +928,6 @@ pre {
   .portfolio-blog-page-title {
     font-size: 1.4em;
   }
-
-  
 }
 
 @media (min-height: 550px) and (max-height: 768px) {
@@ -970,9 +966,6 @@ pre {
 
 @media (max-height: 549px) {
 
-  .letter {
-    font-size: 2em;
-  }
 
   .hello-text {
     font-size: 3em;
