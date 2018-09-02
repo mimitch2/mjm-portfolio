@@ -43,7 +43,8 @@ class App extends Component {
    try {
      const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fa792c1f87ce72cb121f485b11488cd4/30.2672,-97.7431')
      const json = await response.json()
-     this.setState({temp: Math.floor(json.currently.temperature).toString() + "º", 
+     this.setState({
+       temp: Math.floor(json.currently.temperature).toString() + "º", 
        icon: json.currently.icon})
    } catch (error) {
      console.log(error);
@@ -57,10 +58,10 @@ class App extends Component {
    
          <div className="pre-load-all-hidden">
            <img src="/img/IMG_0326.jpg" alt=""/>
+           <img src="/img/photo_site.png" alt=""/>
            <img src="/img/old_portfolio_site.png" alt=""/>
            <img src="/img/monster_site.png" alt=""/>
            <img src="/img/cocktail_site.png" alt=""/>
-           <img src="/img/web-design-bw.jpg" alt=""/>
            <img src="/img/DSCF0035.jpg" alt=""/>
            <img src="https://www.telerik.com/clientsfiles/244515_ie-double-scrollbar.jpg?sfvrsn=d930d843_0" alt=""/>
          </div>

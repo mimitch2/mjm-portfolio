@@ -12,7 +12,7 @@ const Logo = (props) => {
       <div className="logo-div">
 
         
-        <svg width="77px" height="63px" viewBox="0 0 77 63" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg width="77px" height="63px" viewBox="0 0 77 63" version="1.1" xmlns="http://www.w3.org/2000/svg" id="logo">
           <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="Group-2">
               <rect id="Rectangle" fill="#DC5620" x="0" y="0" width="76.2631579" height="63"></rect>

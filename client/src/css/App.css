@@ -10,15 +10,6 @@
   --title-color: rgb(60, 60, 60);
   --react-color: #00d8ff;
   --butter-color: #ffc825;
-  --calcHeight-meas: calc(100vh - 141px);
-}
-
-:root {
-  --primary-color: #a19d5f;
-  --secondary-color: #fd9943;
-  --accent-color: #3f2806;
-  --alt-color: #fed556;
-  --alttwo-color: #f26d20;
 }
 
 .basic-flex-row {
@@ -282,7 +273,7 @@ body {
   margin: 10px 0 0 10px;
 }
 
-#logo-svg {
+#logo {
   width: 72px;
 }
 
@@ -401,8 +392,6 @@ body {
   position: absolute;
   color: var(--orange-color);
 }
-
-
 
 .hello-text {
   transition: .4s ease-in-out;
@@ -528,23 +517,23 @@ body {
 }
 
 .headshot {
-  width: 34%;
+  width: 28%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
 }
 
 
 .bio-main {
   text-transform: uppercase;
-  margin-top: 20vh;
+  margin-top: 50px;
   padding: 0 120px 0 120px;
   color: var(--header-color);
-  font-size: 1.2em;
+  /* font-size: 1.5vw; */
   font-weight: 200;
 }
 
 .bio-lines {
   padding: 1px 4px 1px 4px;
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   background-color: rgba(0, 0, 0, .4);
 }
 
@@ -627,6 +616,12 @@ body {
 
 /************** Blog ********************************/
 
+.image {
+  margin: 0;
+}
+
+
+
 .blog-post-main {
   font-weight: 300;
   width: 80vw;
@@ -644,15 +639,18 @@ body {
   text-transform: uppercase;
 }
 
-.blog-card {
-  font-weight: 300;
+.blog-cards {
   width: 80vw;
+}
+
+.blog-card {
+  
+  font-weight: 300;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--orange-color);
 }
 
 .blog-link {
-  /* background-color: rgba(255, 255, 255, .4); */
   font-weight: 300;
 }
 
@@ -685,25 +683,23 @@ a:visited {
   color: var(--orange-color);
 }
 
-  p {
-    font-size: 1.25em;
-    line-height: 1.58;
-    font-weight: 200;
-  }
-
-  figcaption {
-    font-style: italic;
-    text-align: center;
-    color: #ccc;
-  }
-
-  p code {
-    padding: 2px 4px;
-    font-size: 90%;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  }
+p {
+  font-size: 1.25em;
+  line-height: 1.58;
+  font-weight: 200;
+}
+figcaption {
+  font-style: italic;
+  text-align: center;
+  color: #ccc;
+}
+p code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 
 
 /************** footer **************/
@@ -739,9 +735,10 @@ a:visited {
 .about-footer {
   color: var(--orange-color);
   position: absolute;
-  top: 194vh;
+  bottom: -74px;
   justify-content: space-around;
   padding: 0;
+  height: auto;
 }
 
 /************** media queries **************/
@@ -753,15 +750,9 @@ a:visited {
   }
 
   .portfolio-blog-page-title {
-    font-size: 3.3em;
+    font-size: 3em;
 
   } 
-}
-
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  
-  
 }
 
 
@@ -780,39 +771,8 @@ a:visited {
   .bio-main {
     margin-top: 20vh;
     padding: 0 100px 0 100px;
-    font-size: 1.1em;
   }
 }
-
-@media (min-height: 550px) and (max-height: 768px) {
-  .headshot {
-   width: 20%;
-   margin-top: 80px;
-  }
-
-  
-  .bio-main {
-    margin-top: 40px;
-    padding: 0 90px 0 90px;
-    font-size: .7em;
-  }
-}
-
-@media (max-height: 768px) {
-  .headshot {
-    width: 20%;
-    margin-top: 80px;
-   }
- 
-   
-   .bio-main {
-     margin-top: 40px;
-     padding: 0 90px 0 90px;
-     font-size: .7em;
-   }
-  
-}
-
 
 @media (min-width: 481px) and (max-width: 767px) {
 
@@ -841,42 +801,148 @@ a:visited {
     font-size: 4.5vw;
   }
 
+
   .bio-main {
-    margin-top: 20vh;
+    /* margin-top: 20vh; */
     padding: 0 100px 0 100px;
-    font-size: 1.1em;
   }
 }
 
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+  .letter {
+    font-size: 2em;
+  }
   .nav-list {
     width: 50vw;
+    font-size: 14px;
   }
   
   .nav-item {
     font-size: .8em;
+    /* padding: 0px; */
   }
 
-  #logo-svg {
-    width: 62px;
+  #logo {
+    width: 54px;
   }
   
-  .web-design-text {
-    font-size: .7em;
-    margin-top: -7px;
-  }
-
   .links-main {
-    margin-right: 18px;
+    margin-right: 16px;
 
   }
   
   .links-icon {
-    font-size: 24px;
+    font-size: 18px;
  
+  }
+
+  .hello-text {
+    font-size: 3em;
+  }
+
+  .intro-text-upper {
+    font-size: 1.1em;
+  }
+
+  .temp-div {
+    font-size: 1.1em;
+  }
+
+  .headshot-div {
+    width: 100%;
+    /* margin: 50px 0 0 10px; */
+  }
+  
+  .headshot {
+    width: 48%;
+    margin-top: 60px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
+  }
+
+  .bio-main {
+    padding: 0 20px 0 20px;
+  }
+
+  .bio-lines {
+    font-size: .8em;
+  }
+
+  
+}
+
+@media (min-height: 550px) and (max-height: 768px) {
+
+  .temp-div {
+    font-size: 1.1em;
+  }
+  
+  .weather-icon {
+    transform: scale(.8);
+    margin-top: -4px;
+  }
+
+  .headshot {
+    width: 24%;
+    margin-top: 80px;
+   }
+ 
+   
+   .bio-main {
+     margin-top: 40px;
+     padding: 0 40px 0 40px;
+     font-size: 1.1em;
+   }
+
+   .about-footer {
+     height: auto;
+   }
+
+  .bio-main {
+    margin-top: 40px;
+    padding: 0 90px 0 90px;
+  }
+}
+
+@media (max-height: 549px) {
+
+  .letter {
+    font-size: 2em;
+  }
+
+  .hello-text {
+    font-size: 3em;
+  }
+
+  .temp-div {
+    margin-top: 90vh;
+    font-size: 1.1em;
+  }
+
+  .weather-icon {
+    transform: scale(.9);
+    margin-top: -4px;
+  }
+
+
+  .headshot {
+    width: 20%;
+    margin-top: 60px;
+   }
+ 
+   
+   .bio-main {
+     margin-top: 20px;
+     padding: 0 20px 0 20px;
+     font-size: .8em;
+   }
+
+   .about-footer {
+     height: auto;
   }
   
 }
+
 
 
