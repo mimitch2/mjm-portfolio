@@ -34,13 +34,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import CircularProgress from '@material-ui/core/CircularProgress';
-
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const styles = {
   root: {
-    // flexGrow: 1,
     width: "35vw",
   },
 };
@@ -63,7 +60,6 @@ function LinearIndeterminate(props) {
         <div className={classes.root}>
           <span className="letter">LOADING</span>
           <LinearProgress color="primary" />
-          {/* <CircularProgress color="primary" /> */}
         </div>
       </div>
     </MuiThemeProvider>

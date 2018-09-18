@@ -39,23 +39,30 @@ class About extends Component {
       const hello = document.getElementById("hello-text")
       const intro = document.getElementById("intro-text-upper")
       const chev = document.getElementById("chevron")
+      const temp = document.getElementById("temp")
 
-      if (hello.getBoundingClientRect().y < 54){
+      if (hello.getBoundingClientRect().y < 64){
         hello.classList.add("hidden")
-      } else  if (hello.getBoundingClientRect().y > 54) {
+      } else  if (hello.getBoundingClientRect().y > 64) {
         hello.classList.remove("hidden")
       }
 
-      if (intro.getBoundingClientRect().y < 84){
+      if (intro.getBoundingClientRect().y < 94){
         intro.classList.add("hidden")
-      } else  if (intro.getBoundingClientRect().y > 84) {
+      } else  if (intro.getBoundingClientRect().y > 94) {
         intro.classList.remove("hidden")
       }
 
-      if (chev.getBoundingClientRect().y < 400){
+      if (chev.getBoundingClientRect().y < 100){
         chev.classList.add("hidden")
-      } else  if (chev.getBoundingClientRect().y > 400) {
+      } else  if (chev.getBoundingClientRect().y > 100) {
         chev.classList.remove("hidden")
+      }
+
+      if (temp.getBoundingClientRect().y < 100){
+        temp.classList.add("hidden")
+      } else  if (temp.getBoundingClientRect().y > 100) {
+        temp.classList.remove("hidden")
       }
 
     }
@@ -63,6 +70,7 @@ class About extends Component {
     render(){            
       return (
         <div className="austin-image-div" id="austin-image-div">
+          <img src="/img/IMG_0326.jpg" alt="" className="background-image"/>
           <Header headerColor="header-main trans"/>
           <div className="about-overlay">
 
@@ -77,7 +85,7 @@ class About extends Component {
             </div>
 
 
-            <div className="temp-div"> 
+            <div className="temp-div" id="temp"> 
               <span>AUSTIN: {this.props.temp}</span> &nbsp;&nbsp; <span className="weather-icon">{this.returnWeatherIcon()}</span> 
             </div> 
       
