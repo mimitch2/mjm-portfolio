@@ -45,7 +45,7 @@ class Blog extends Component {
   }
 
   returnBullet = (i, length) => {
-    return (i) < length ? " • " : ""
+    return i < length ? " • " : ""
   }
 
   componentDidMount = () => {
