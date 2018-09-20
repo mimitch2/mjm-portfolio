@@ -96,7 +96,8 @@ class About extends Component {
               </div>
               <p className="bio-main">
                 <span className="bio-lines"> I spent 20 years at Apple as a qa engineer and manager working 
-                on wildly popular consumer-facing software. My time there embedded several core principles in my mind that are the basis for how I approach designing and building web applications. 
+                on high profile consumer facing software. My time there embedded several core principles 
+                in my mind that are the basis for how I approach designing and building web applications. 
                 I beleive that intuitive, effortless user experiences should obfuscate the underlying technology.
                 </span>
               </p>            
