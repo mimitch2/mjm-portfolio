@@ -31,7 +31,7 @@ class Blog extends Component {
         this.setState({ loaded: true})
       }, 400);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }  
     // console.log(this.state.resp);
 

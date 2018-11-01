@@ -50,7 +50,8 @@ class App extends Component {
      const json = await response.json()
      this.setState({
        temp: Math.floor(json.currently.temperature).toString() + "º", 
-       icon: json.currently.icon})
+       icon: json.currently.icon
+     })
    } catch (error) {
      console.log(error);
    }
