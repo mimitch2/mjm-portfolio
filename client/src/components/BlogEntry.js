@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Butter from 'buttercms'
-import { Helmet } from "react-helmet";
-import '../css/App.css'
-import Footer from './Footer'
+import Butter from 'buttercms';
+import { Helmet } from 'react-helmet';
+import '../css/App.css';
+import Footer from './Footer';
 
 const butter = Butter('b7d2cf55ae6b0b2a49b996a89ae2ddb3d0f83b57');
 
@@ -17,26 +17,34 @@ class BlogPost extends Component {
   async componentDidMount() {
     try {
       const slug = this.props.match.params.slug;
-      const response = await butter.post.retrieve(slug)
-      const json = await response
+      const response = await butter.post.retrieve(slug);
+      const json = await response;
       this.setState({
         loaded: true,
         post: json.data.data
-      })
+      });
     } catch (error) {
       console.log(error);
     }
   }
 
+  // returnHtml = data => {
+  //   var parser = new DOMParser();
+  //   var el = parser.parseFromString(data, 'text/xml');
+  //   console.log(el.firstChild);
+  //   // return el.firstChild;
+  // };
+
   handleClick = () => {
-    this.props.history.goBack()
-  }
+    this.props.history.goBack();
+  };
 
   render() {
-    
     if (this.state.loaded) {
       const post = this.state.post;
-
+      const postBody = `${post.body}`;
+      // const testDiv = document.getElementById('id');
+      // document.body.innerHTML = postBody;
       return (
         <div className="blog-post-main">
           <Helmet>
@@ -45,21 +53,40 @@ class BlogPost extends Component {
             <meta name="og:image" content={post.featured_image} />
           </Helmet>
 
-          <h1 className="blog-entry-title"><i className="fal fa-chevron-left" onClick={this.handleClick}></i> &nbsp;&nbsp;{post.title}</h1>
-        
-          <div dangerouslySetInnerHTML={{__html: post.body}} className="blog-entry-body"/>
+          <h1 className="blog-entry-title">
+            <i className="fal fa-chevron-left" onClick={this.handleClick} />{' '}
+            &nbsp;&nbsp;{post.title}
+          </h1>
 
-          <Footer credits="Powered by:   " icon={<i className="fab footer-icon fa-react"></i>} 
-            plus={<i className="fal fa-plus" style={{fontSize: ".9em"}}></i>}
-            butter={<a href="https://buttercms.com/" className="butter-link" target="_blank" rel='noopener noreferrer'><img src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png" alt="butter cms" className="butter-logo"/></a>} 
-            copyWrite="© 2018 Mike J Mitchell"/>
-
+          <div
+            dangerouslySetInnerHTML={{ __html: post.body }}
+            className="blog-entry-body"
+          />
+          {/* <div id="test"> {this.returnHtml(post.body)} </div> */}
+          <Footer
+            credits="Powered by:   "
+            icon={<i className="fab footer-icon fa-react" />}
+            plus={<i className="fal fa-plus" style={{ fontSize: '.9em' }} />}
+            butter={
+              <a
+                href="https://buttercms.com/"
+                className="butter-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="http://vcg.engr.ucr.edu/_nuxt/img/buttercms.37e3481.png"
+                  alt="butter cms"
+                  className="butter-logo"
+                />
+              </a>
+            }
+            copyWrite="© 2018 Mike J Mitchell"
+          />
         </div>
       );
     } else {
-      return (
-        <div />
-      );
+      return <div />;
     }
   }
 }

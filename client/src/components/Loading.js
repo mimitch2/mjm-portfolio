@@ -37,9 +37,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const styles = {
-  root: {
-    width: "35vw",
-  },
+  // root: {
+  //   width: "35vw",
+  // },
 };
 
 const theme = createMuiTheme({
@@ -58,8 +58,9 @@ function LinearIndeterminate(props) {
     <MuiThemeProvider theme={theme}>
       <div className="loading" id="loading-div">
         <div className={classes.root}>
-          <span className="letter">LOADING</span>
-          <LinearProgress color="primary" />
+          <i className="spinner fal fa-sync"></i>
+          {/* <span className="letter">LOADING</span> */}
+          {/* <LinearProgress color="primary" /> */}
         </div>
       </div>
     </MuiThemeProvider>

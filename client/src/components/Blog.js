@@ -26,10 +26,9 @@ class Blog extends Component {
       this.setState({
         resp: json.data
       }) 
-      console.log(this.state.resp);
       setTimeout(() => {
         this.setState({ loaded: true})
-      }, 400);
+      }, 100);
     } catch (error) {
       // console.log(error);
     }  
